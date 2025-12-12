@@ -70,10 +70,31 @@
 }
 
 .hero-nav a {
+    position: relative;
     text-decoration: none;
     font-size: 1rem;
     color: #111;
+
+    transition: transform 0.25s ease;
 }
+
+.hero-nav a:hover {
+    transform: scale(1.6);
+    z-index: 2;
+}
+
+.hero-nav:has(a:hover) a {
+    transition: transform 0.25s ease;
+}
+
+.hero-nav a:hover ~ a { /*  ~ betyder "alla syskon efter" */
+    transform: translateX(1rem);
+}
+
+.hero-nav a:has(~a:hover) {
+    transform: translateX(-1rem);
+}
+
 
 .hero-nav.is-visible {
     opacity: 1;

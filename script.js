@@ -7,7 +7,7 @@ let firstScrollHandled = false;
 let scrollDistance = 0;
 
 const UNLOCK_THRESHOLD = 500; /* varje 100 = 1 scroll */
-const UNLOCK_DELAY = 1200; /* delay i ms */
+const UNLOCK_DELAY = 1800; /* delay i ms */
 
 /* lås scroll i början */
 document.body.classList.add('no-scroll');

@@ -37,7 +37,7 @@
             <div class="about-text">
                 <h2>About</h2>
                 <p>
-                    Im currently studying <span>.NET Development</span> at Nackademin, learning how 
+                    I'm currently studying <span>.NET Development</span> at Nackademin, learning how 
                     to turn real-world problems into maintainable software solutions.
                     With a background as an entrepreneur, I value clarity, structure and delivering
                     things that actually work.
@@ -56,7 +56,7 @@
             <div class="what-i-do">
                 <h3>What I do</h3>
                 <p>
-                    Im a .NET development student at Nackademin, focused on backend devolopment,
+                    I'm a .NET development student at Nackademin, focused on backend devolopment,
                     databases, and writing clean, understandable code.
                 </p>
             </div>
@@ -87,7 +87,7 @@
                     </ul>
                 </li>
 
-                <li class="skills-group">
+                <li class="skill-group">
                     <span class="skills-group-title">Tools</span>
                     <ul class="skill-items">
                         <li>Git</li>
@@ -167,15 +167,15 @@
                         <p>
                             Built and ran Freshvent, maintaining the highest customer satisfaction among Swedish ventilation companies and consistently top rankings on Reco.se.
                             Ranked <strong>#4 among Sweden's best HVAC companies in 2025</strong>.
-                            (<a href="https://www.reco.se/freshvent-stockholm-ab-lidingo" target="_blank" class="testimonials-link">reviews</a>)
-                            (<a href="https://www.reco.se/foretag/sverige-basta-foretag/vvs-foretag" target="_blank" class="testimonials-link">Swedens top 10 best HVAC-companies</a>)
+                            (<a href="https://www.reco.se/freshvent-stockholm-ab-lidingo" target="_blank" rel="noopener noreferrer" class="testimonials-link">reviews</a>)
+                            (<a href="https://www.reco.se/foretag/sverige-basta-foretag/vvs-foretag" target="_blank" rel="noopener noreferrer" class="testimonials-link">Swedens top 10 best HVAC-companies</a>)
                         </p>
 
                         <p>
                             Co-founded <strong>PeakPods</strong>, a startup developing innovative prefabricated housing concepts with mirrored glass design. 
                             Contributed to product development and business strategy, resulting in a full-scale show unit exhibited at Nybygget, 
                             Arlanda's house expo.
-                            (<a href="https://www.peakpods.io/" target="_blank" class="testimonials-link">www.peakpods.io</a>)
+                            (<a href="https://www.peakpods.io/" target="_blank" rel="noopener noreferrer" class="testimonials-link">www.peakpods.io</a>)
                         </p>
                 </article>
             </div>
@@ -191,7 +191,9 @@
                     Feel free to send me a message.
                 </p>
 
-                <form class="contact-form">
+                <a href="cv/Hampus-Rogestam-CV.pdf" class="cv-download" download aria-label="Download CV as PDF">Download CV</a>
+
+                <form action="/contact" method="post" class="contact-form">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your name.." required>
@@ -212,6 +214,16 @@
                 </form>
             </div>
           </section>
-     </div>
+
+        <!-- -------------------------------FOOTER------------------------------- -->
+         <footer>
+            <p>© 2025 Hampus Rogestam</p>
+
+            <nav aria-label="Footer links">
+                <a href="https://www.linkedin.com/in/hampus-rogestam-051290388/" target="_blank" rel="noopener noreferrer" aria-label="Hampus Rogestam on LinkeDin">LinkedIn</a>
+                <a href="https://github.com/hrogestam" target="_blank" rel="noopener noreferrer" aria-label="Hampus Rogestam on GitHub">GitHub</a>
+                <a href="cv/Hampus-Rogestam-CV.pdf" download aria-label="Download CV as PDF">Download CV</a>
+            </nav>
+         </footer>
 </body>
 </html>

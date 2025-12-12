@@ -1,7 +1,8 @@
 
 const heroNav = document.querySelector('.hero-nav');
 const scrollCue = document.querySelector('.scroll-cue');
-const line = document.querySelector('.horizontal-line'); /* nytt */
+const line = document.querySelector('.horizontal-line');
+const socialLinks = document.querySelector('.social-links');
 
 let firstScrollHandled = false;
 let scrollDistance = 0;
@@ -30,6 +31,7 @@ window.addEventListener('wheel', (event) => {
     /* lås upp först när tröskeln nås */
     if (scrollDistance >= UNLOCK_THRESHOLD) {
         heroNav.classList.add('is-visible'); /* visa navbar */
+        socialLinks.classList.add('is-visible'); /* visa social-link ikoner */
         scrollCue.classList.add('is-hidden'); /* dölj scroll-hint */
         
         /* vänta innan scroll släpps */

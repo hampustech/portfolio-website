@@ -1,3 +1,10 @@
+/* ---------------------------GLOBAL HELPERS--------------------------- */
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
+
 /* --------------------------------HERO-------------------------------- */
 /* HERO */
 #hero {
@@ -16,6 +23,7 @@
     font-weight: 700;
     margin: 0;
     opacity: 0.9;
+    color: #111;
 }
 
 /* title */
@@ -27,15 +35,17 @@
     opacity: 0.8;
 }
 
-/* Horizontal line in middle */
-.horizontal-line {
+ .horizontal-line {
     position: absolute; 
     top: 50%;
-    left: 0%;
+    left: 50%;
 
-    width: 100%;
+    width: 0%;
     height: 0.125rem; 
     background-color: #394631;
+
+    transform: translateX(-50%);
+    transition: width 1s ease-out;
 }
 
 /* Nav */
@@ -43,29 +53,71 @@
     font-family: "Space Grotesk", sans-serif;
     font-weight: 600;
     letter-spacing: 0.05rem;
+
     position: absolute;
     top: calc(50% - 2rem);
     left: 50%;
-    transform: translateX(-50%);
 
     display: flex;
     gap: 2rem;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transform: translateX(-50%) translateY(0.5rem);
+
+    transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
 .hero-nav a {
     text-decoration: none;
     font-size: 1rem;
-    color: #283122;
+    color: #111;
+}
+
+.hero-nav.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    
+    transform: translateX(-50%) translateY(0);
 }
 
 /* Scroll-hint */
 .scroll-cue {
     font-family: "Space Grotesk", sans-serif;
+
     position: absolute; 
     top: calc(50% + 2.5rem);
     left: 50%;
-    transform: translateX(-50%);
 
-    font-size: 0.875rem;
+    font-size: 1rem;
+    color: black;
+
     opacity: 0.8;
+
+    transform: translateX(-50%) translateY(0);
+
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.3;
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        opacity: 0.9;
+        transform: translateX(-50%) translateY(0.4rem);
+    }
+    100% {
+        opacity: 0.3;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* stäng av pulseringen vid första scroll */
+.scroll-cue.is-hidden {
+    animation: none;
+    opacity: 0;
+    pointer-events: none;
 }

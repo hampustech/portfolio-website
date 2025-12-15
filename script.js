@@ -33,9 +33,9 @@ window.addEventListener('wheel', (event) => {
         heroNav.classList.add('is-visible'); /* visa navbar */
         socialLinks.classList.add('is-visible'); /* visa social-link ikoner */
         scrollCue.classList.add('is-hidden'); /* dölj scroll-hint */
-        
+
         /* vänta innan scroll släpps */
-        setTimeout (() => {
+        setTimeout(() => {
             document.body.classList.remove('no-scroll'); /* lås upp scroll */
             firstScrollHandled = true;
         }, UNLOCK_DELAY);

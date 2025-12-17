@@ -307,5 +307,143 @@
 /* --------------------------------SKILLZ-------------------------------- */
 /* SKILLZ */
 #skills {
-    position
+    position: relative;
+    min-height: 100vh;
+    padding: 6rem 2rem;
+    background-color: #f1f0ea;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.skills-lines {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    max-width: 68.75rem;
+    margin: 0 auto;
+
+    /* skapar subtila vertikala linjer */
+    background-image: repeating-linear-gradient(
+        to right,
+        rgba(57, 70, 49, 0.1),
+        rgba(57, 70, 49, 0.1) 1px,
+        transparent 1px,
+        transparent 7.5rem
+    );
+
+    /* tonar linjerna i höjdled */
+    mask-image: linear-gradient(
+        to bottom,             /*fade uppifrån till ned */
+        transparent 0%,        /* osynlig högst upp */
+        black 20%,           /* full styrka efter 20% */
+        black 80%,           /* full styrka till 80% */
+        transparent 100%      /* tonar ut i botten */
+    );
+}
+
+.skills-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 68.75rem;
+    margin: 0 auto;
+}
+
+.skills-title {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 0.25em;
+    text-indent: 0.25rem;
+    font-weight: 800;
+    margin-bottom: 5.5rem;
+    text-transform: uppercase;
+
+    text-align: center; 
+
+    opacity: 0;
+    transform: translateY(0.6rem);
+    transition: opacity 2.5s ease, transform 2.5s ease;
+}
+
+.skills-title.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skills-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    transform: translateY(-0.5rem);
+}
+
+.skills-column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    transform: translateY(1.2rem);
+    transition: opacity 1.4s ease, transform 1.4s ease;
+}
+
+.skills-column.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.skills-column h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    text-align: center;
+
+    opacity: 0.6;
+    margin-bottom: 2.2rem;
+
+    position: relative; 
+}
+
+.skills-column:nth-child(1) {
+    /* transform: translateY(-1.2rem); */
+    margin-top: -1.2rem;
+}
+
+.skills-column:nth-child(3) {
+    /* transform: translateY(1.2rem); */
+    margin-top: 1.2rem;
+}
+
+
+.skills-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 50%;
+    text-align: left;
+
+    /* position: relative;
+    left: 40%; */
+}
+
+.skills-column li {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.02em; 
+    font-size: 1.05rem;
+    line-height: 1.8;
+
+    text-align: left;
+    white-space: nowrap;
 }

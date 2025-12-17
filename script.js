@@ -9,6 +9,10 @@ const aboutBgText = document.querySelector('.about-bg-text');
 
 const revealElements = document.querySelectorAll('.reveal');
 
+const skillsTitle = document.querySelector('.skills-title');
+const skillColumns = document.querySelectorAll('.skills-column');
+
+
 // --------------------------------HERO--------------------------------
 
 let firstScrollHandled = false;
@@ -80,4 +84,30 @@ window.addEventListener('scroll', () => {
             el.classList.add('is-visible');
         }
     });
+});
+
+// --------------------------------SKILLZ--------------------------------
+let skillsAnimated = false; // kör bara en gång
+
+window.addEventListener('scroll', () => {
+    if (skillsAnimated) return;
+    if (!skillsTitle || skillColumns.length === 0) return;
+
+    const titleRect = skillsTitle.getBoundingClientRect();
+
+    // när skills-rubriken når in i viewport
+    if (titleRect.top < window.innerHeight * 0.85) {
+
+        // 1. visa rubriken
+        skillsTitle.classList.add('is-visible');
+
+        // 2. visa kolumnerna (lite efter varandra)
+        skillColumns.forEach((col, index) => {
+            setTimeout(() => {
+                col.classList.add('is-visible');
+            }, index * 300);
+        });
+
+        skillsAnimated = true;
+    }
 });

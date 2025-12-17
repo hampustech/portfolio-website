@@ -12,7 +12,6 @@ const revealElements = document.querySelectorAll('.reveal');
 const skillsTitle = document.querySelector('.skills-title');
 const skillColumns = document.querySelectorAll('.skills-column');
 
-
 // --------------------------------HERO--------------------------------
 
 let firstScrollHandled = false;
@@ -68,7 +67,7 @@ window.addEventListener('scroll', () => {
 
     /* --- PARALLAX --- */
     const scrollY = window.scrollY; // scrollY är hur många pixlar sidan har scrollat (högst upp = 0, scrolla ner 500 = 500)
-    const offset = scrollY * 0.12; // rör sig 10% i förhållande till scrollen / hur sidan rör sig
+    const offset = scrollY * 0.15; // rör sig 15% i förhållande till scrollen / hur sidan rör sig
 
     /* behåll elementet horisontellt centrerat men flytta det lite nedåt ju mer man scrollar */
     aboutBgText.style.transform =

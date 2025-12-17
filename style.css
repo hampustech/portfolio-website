@@ -202,7 +202,8 @@
 
 .about-bg-text {
     position: absolute;
-    top: 26%;
+    /* top: 26%; */
+    top: 16.7rem;
     left: 50%;
     
     transform: translate(-50%, -50%);
@@ -333,7 +334,7 @@
     background-image: repeating-linear-gradient(
         to right,
         rgba(57, 70, 49, 0.1),
-        rgba(57, 70, 49, 0.1) 1px,
+        rgba(57, 70, 49, 0.1) 3px,
         transparent 1px,
         transparent 7.5rem
     );
@@ -342,8 +343,10 @@
     mask-image: linear-gradient(
         to bottom,             /*fade uppifrån till ned */
         transparent 0%,        /* osynlig högst upp */
-        black 20%,           /* full styrka efter 20% */
-        black 80%,           /* full styrka till 80% */
+        rgba(0,0,0,0.15) 10%,
+        black 35%,           /* full styrka efter 20% */
+        black 65%,           /* full styrka till 80% */
+        rgba(0,0,0,0.15) 90%,
         transparent 100%      /* tonar ut i botten */
     );
 }
@@ -357,7 +360,7 @@
 
 .skills-title {
     font-family: "Chakra Petch", sans-serif;
-    font-size: 2.2rem;
+    font-size: clamp(2.6rem, 4vw, 3.2rem);
     letter-spacing: 0.25em;
     text-indent: 0.25rem;
     font-weight: 800;

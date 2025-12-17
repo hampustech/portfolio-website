@@ -3,6 +3,7 @@ const heroNav = document.querySelector('.hero-nav');
 const scrollCue = document.querySelector('.scroll-cue');
 const line = document.querySelector('.horizontal-line');
 const socialLinks = document.querySelector('.social-links');
+const aboutBgText = document.querySelecter('.about-bg-text');
 
 let firstScrollHandled = false;
 let scrollDistance = 0;

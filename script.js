@@ -3,7 +3,13 @@ const heroNav = document.querySelector('.hero-nav');
 const scrollCue = document.querySelector('.scroll-cue');
 const line = document.querySelector('.horizontal-line');
 const socialLinks = document.querySelector('.social-links');
-const aboutBgText = document.querySelecter('.about-bg-text');
+
+const aboutSection = document.querySelector('#about');
+const aboutBgText = document.querySelector('.about-bg-text');
+
+const revealElements = document.querySelectorAll('.reveal');
+
+// --------------------------------HERO--------------------------------
 
 let firstScrollHandled = false;
 let scrollDistance = 0;
@@ -42,3 +48,36 @@ window.addEventListener('wheel', (event) => {
         }, UNLOCK_DELAY);
     }
 }, { passive: false });
+
+// --------------------------------ABOUT--------------------------------
+
+/* kolla om about-sektionen syns i fönstret */
+function isAboutInView() {
+    const rect = aboutSection.getBoundingClientRect(); // kollar positionen i förhållande till viewport
+    return rect.top < window.innerHeight && rect.bottom > 0; // returnera om top och bottom är i viewport
+}
+
+/* varje gång använadern scrollar kör denna funktion */
+window.addEventListener('scroll', () => {
+    if (!aboutSection || !aboutBgText) return; // om elementen inte finns i dom så avbryt
+    if (!isAboutInView()) return; // om About inte är synlig så avbryt
+
+    /* --- PARALLAX --- */
+    const scrollY = window.scrollY; // scrollY är hur många pixlar sidan har scrollat (högst upp = 0, scrolla ner 500 = 500)
+    const offset = scrollY * 0.12; // rör sig 10% i förhållande till scrollen / hur sidan rör sig
+
+    /* behåll elementet horisontellt centrerat men flytta det lite nedåt ju mer man scrollar */
+    aboutBgText.style.transform =
+        `translate(-50%, calc(-50% + ${offset}px))`;
+
+    /* --- REVEAL --- */
+    /* loopar igenom varje .reveal-element och mäter var elementet är på skärmen just nu */
+    revealElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+
+        /* om elementets toppkant är ovanför 85% av skärmens höjd (innerHeight mäter skärmens höjd i pixlar beroende på enhet)*/
+        if (rect.top < window.innerHeight * 0.73) {
+            el.classList.add('is-visible');
+        }
+    });
+});

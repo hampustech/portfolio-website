@@ -202,13 +202,13 @@
 
 .about-bg-text {
     position: absolute;
-    top: 50%;
+    top: 26%;
     left: 50%;
     
     transform: translate(-50%, -50%);
 
     font-family: Kode Mono;
-    font-size: 20vw;
+    font-size: clamp(9rem, 20vw, 24rem);
     font-weight: 700;
     letter-spacing: 0.2em;
 
@@ -220,6 +220,8 @@
     white-space: nowrap;
 
     z-index: 0;
+
+    /* transition: transform 0.1s linear; */
 }
 
 .about-inner {
@@ -287,7 +289,17 @@
     justify-self: end;
 }
 
-/* .reveal {
+.reveal {
     opacity: 0;
-    transform: translateY(20px);
-} */
+    transform: translateY(1.45rem);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-portrait.reveal.is-visible {
+    transition: opacity 2.2s ease, transform 2.2s ease;
+}

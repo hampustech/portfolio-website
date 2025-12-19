@@ -199,7 +199,7 @@
 
     overflow: hidden;
 
-    scroll-margin-top: -2rem;
+    scroll-margin-top: 5rem;
 
 
 }
@@ -207,7 +207,7 @@
 .about-bg-text {
     position: absolute;
     /* top: 26%; */
-    top: 16.3rem;
+    top: 17.3rem;
     left: 50%;
     
     transform: translate(-50%, -50%);
@@ -466,6 +466,8 @@
     position: relative;
     background-color: #f1f0ea;
     padding: 24rem 2rem;
+
+    scroll-margin-top: -17rem;
 }
 
 .portfolio-inner {
@@ -492,7 +494,7 @@
     justify-content: center;
     gap: 2.5rem;
 
-    perspective: 1200px;
+    /* perspective: 1200px; */
 }
 
 .project-card {
@@ -517,10 +519,10 @@
         0 0.8rem 2.4rem rgba(57, 70, 49, 0.08);
 
     transition:
-        transform 0.25s ease,
+        transform 0.15s ease,
         box-shadow 0.25s ease;
 
-        transform-style: preserve-3d;
+    backface-visibility: hidden;
 }
 
 /* .project-card article {
@@ -533,7 +535,7 @@
 
 .project-card h3 {
     font-family: "Chakra Petch", sans-serif;
-    /* letter-spacing: 0.25em; */
+    letter-spacing: 0.02em;
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.75rem; 
@@ -573,7 +575,7 @@
 
 .project-card:hover {
     /* transform: scale(1.02); */
-    transform: translateY(-0.25rem) scale(1.02);
+    transform: translateY(-0.25rem) scale(1.01);
     box-shadow: 0 1.2rem 3.2rem rgba(57, 70, 49, 0.14);
 
     cursor: pointer;

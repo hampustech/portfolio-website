@@ -9,13 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <!-- --------------------------------HERO-------------------------------- -->
     <section id="hero">
         <!-- namn och titel högst upp i vänster hörn -->
         <h1>Hampus Rogestam</h1>
-        <h2>.NET Developer</h2>
+        <h2>Tech Wizard🧙‍♂️</h2>
 
         <!-- Horisontiell linje i mitten av hero-sektionen -->
         <div class="horizontal-line"></div>
@@ -50,102 +53,136 @@
 
     <!-- --------------------------------ABOUT-------------------------------- -->
     <section id="about">
+
+        <div class="about-bg-text" aria-hidden="true">ABOUT</div>
+
         <div class="about-inner">
-            <!-- bild som ska "flyta" ovanför texten, lite offset -->
-            <img src="portrait.jpg" alt="Portrait of Hampus" class="about-portrait">
 
             <div class="about-text">
-                <h2>About</h2>
+                <h2>I'm learning to build<br> clear,
+                    maintainable<br> software.
+                </h2>
                 <p>
-                    I'm currently studying <span>.NET Development</span> at Nackademin, learning how 
-                    to turn real-world problems into maintainable software solutions.
-                    With a background as an entrepreneur, I value clarity, structure and delivering
-                    things that actually work.
+                    Often the “boring“ kind.
                 </p>
             </div>
 
-            <div class="background-text">
-                <h3>Background</h3>
-                <p>
-                    Before moving into software development, I built and ran several companies in different industries.
-                    Running real businesses taught me to think long-term, take responsibility, and build systems that 
-                    people actually rely on.
-                </p>
+            <img src="portrait.png" 
+                 alt="Portrait of Hampus" 
+                 class="about-portrait reveal">
+
+
+            <div class = "background-text reveal">
+                    <h3>Background</h3>
+                    <p>
+                        Before moving into software development, I built and ran several companies in different industries.
+                        Running real businesses taught me to think long-term, take responsibility, and build systems that 
+                        actually hold up.
+                    </p>
+                </div>
+
+                <div class="what-i-do reveal">
+                    <h3>What I do</h3>
+                    <p>
+                        I'm a .NET development student at Nackademin, learning backend development,
+                        databases, and how to write clear, understandable code.
+                    </p>
             </div>
 
-            <div class="what-i-do">
-                <h3>What I do</h3>
-                <p>
-                    I'm a .NET development student at Nackademin, focused on backend devolopment,
-                    databases, and writing clean, understandable code.
-                </p>
-            </div>
         </div>
+
     </section>
 
     <!-- --------------------------------SKILLZ-------------------------------- -->
      <section id="skills">
+
+        <div class="skills-lines" aria-hidden="true"></div>
+
         <div class="skills-inner">
-            <h2>Skills</h2>
 
-            <ul class="skills-list">
-                <li class="skill-group">
-                    <span class="skills-group-title">Core</span>
-                    <ul class="skill-items">
-                        <li>C#</li>
-                        <li>.NET</li>
-                        <li>SQL</li>
-                    </ul>
-                </li>
+            <h2 class="skills-title">Skills</h2>
 
-                <li class="skill-group">
-                    <span class="skills-group-title">Frontend</span>
-                    <ul class="skill-items">
-                        <li>HTML</li>
-                        <li>CSS / SCSS</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </li>
+            <div class="skills-columns">
 
-                <li class="skill-group">
-                    <span class="skills-group-title">Tools</span>
-                    <ul class="skill-items">
-                        <li>Git</li>
-                        <li>Visual Studio</li>
-                        <li>VS Code</li>
+                <div class="skills-column">
+                    <h3>Core</h3>
+                    <ul>
+                        <li>
+                            <span>C#</span>
+                        </li>
+                        <li>
+                            <span>.NET</span>
+                        </li>
+                        <li>
+                            <span>SQL</span>
+                        </li>
                     </ul>
-                </li>
-            </ul>
+                </div>
+
+                <div class="skills-column">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>
+                            <span>HTML</span>
+                        </li>
+                        <li>
+                            <span>CSS</span>
+                        </li>
+                        <li>
+                            <span>JavaScript</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="skills-column">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li>
+                            <span>Git</span>
+                        </li>
+                        <li>
+                            <span>Visual Studio</span>
+                        </li>
+                        <li>
+                            <span>VS Code</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
         </div>
      </section>
 
          <!-- --------------------------------PORTFOLIO-------------------------------- -->
-          <section id="portfolio">
-            <div class="portfolio-inner">
-                <h2>Portfolio</h2>
-                <article class="project">
-                    <h3>Project one</h3>
-                    <p>
-                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                    </p>
-                    <a href="#" class="project-link">View project</a>
-                </article>
-                <article class="project">
-                    <h3>Project two</h3>
-                    <p>
-                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                    </p>
-                    <a href="#" class="project-link">View project</a>
-                </article>
-                <article class="project">
-                    <h3>Project three</h3>
-                    <p>
-                        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                    </p>
-                    <a href="#" class="project-link">View project</a>
-                </article>
+    <section id="portfolio">
+        <div class="portfolio-inner">
+            <h2>Portfolio</h2>
+
+            <div class="projects-grid">
+
+            <a href="#" class="project-card">
+                <h3>Project One</h3>
+                <p>Short project description.</p>
+                <span class="project-cta">View project →</span>
+            </a>
+
+            <a href="#" class="project-card">
+                <h3>Project Two</h3>
+                <p>Short project description.</p>
+                <span class="project-cta">View project →</span>
+            </a>
+
+            <a href="#" class="project-card">
+                <h3>Project Three</h3>
+                <p>Short project description.</p>
+                <span class="project-cta">View project →</span>
+            </a>
+
             </div>
-          </section>
+        </div>
+    </section>
 
         <!-- -------------------------------TESTIMONIALS------------------------------- -->
          <section id="testimonials">

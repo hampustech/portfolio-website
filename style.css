@@ -6,7 +6,7 @@
 
 
 /* --------------------------------HERO-------------------------------- */
-/* HERO */
+/* HERO - design locked*/
 #hero {
     min-height: 100vh;
     padding: 2rem;
@@ -183,4 +183,407 @@
     width: 100%;
     height: 100%;
     fill: currentcolor;
+}
+
+/* --------------------------------ABOUT-------------------------------- */
+/* ABOUT - design locked */
+#about {
+    /* outline: 2px solid red; */
+
+
+    position: relative;
+    min-height: 100vh;
+
+    background-color: #f1f0ea;
+    padding: 6rem 2rem;
+
+    overflow: hidden;
+
+    scroll-margin-top: 5rem;
+
+
+}
+
+.about-bg-text {
+    position: absolute;
+    /* top: 26%; */
+    top: 17.3rem;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+
+    font-family: Kode Mono;
+    font-size: clamp(9rem, 20vw, 24rem);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+
+    color: #111;
+    opacity: 0.05;
+
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+
+    z-index: 0;
+
+    /* transition: transform 0.1s linear; */
+}
+
+.about-inner {
+    /* outline: 2px solid blue; */
+
+    position: relative;
+    z-index: 1;
+
+    max-width: 68.75rem;
+    margin: 0 auto;
+
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    row-gap: 3rem;
+}
+
+.about-text h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.95rem;
+    opacity: 0.7;
+}
+
+.about-portrait {
+    width: 100%;
+    max-width: 320px;
+
+    border-radius: 1rem;
+
+    filter: grayscale(100%);
+}
+
+.background-text,
+.what-i-do {
+    max-width: 60ch;
+}
+
+.background-text h3,
+.what-i-do h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 0.75rem;
+}
+
+.background-text p,
+.what-i-do p {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.about-portrait,
+.what-i-do {
+    justify-self: end;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(1.45rem);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-portrait.reveal.is-visible {
+    transition: opacity 2.2s ease, transform 2.2s ease;
+}
+
+/* --------------------------------SKILLZ-------------------------------- */
+/* SKILLZ - design locked */
+#skills {
+    position: relative;
+    min-height: 100vh;
+    padding: 6rem 2rem;
+    background-color: #f1f0ea;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    scroll-margin-top: -7rem;
+}
+
+
+.skills-lines {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    max-width: 68.75rem;
+    margin: 0 auto;
+
+    /* skapar subtila vertikala linjer */
+    background-image: repeating-linear-gradient(
+        to right,
+        rgba(57, 70, 49, 0.1),
+        rgba(57, 70, 49, 0.1) 3px,
+        transparent 1px,
+        transparent 7.5rem
+    );
+
+    /* tonar linjerna i höjdled */
+    mask-image: linear-gradient(
+        to bottom,             /*fade uppifrån till ned */
+        transparent 0%,        /* osynlig högst upp */
+        rgba(0,0,0,0.15) 10%,
+        black 35%,           /* full styrka efter 20% */
+        black 65%,           /* full styrka till 80% */
+        rgba(0,0,0,0.15) 90%,
+        transparent 100%      /* tonar ut i botten */
+    );
+}
+
+.skills-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 68.75rem;
+    margin: 0 auto;
+}
+
+.skills-title {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: clamp(2.6rem, 4vw, 3.2rem);
+    letter-spacing: 0.25em;
+    text-indent: 0.25rem;
+    font-weight: 800;
+    margin-bottom: 5.5rem;
+    text-transform: uppercase;
+
+    text-align: center; 
+
+    opacity: 0;
+    transform: translateY(0.6rem);
+    transition: opacity 2.5s ease, transform 2.5s ease;
+}
+
+.skills-title.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skills-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    transform: translateY(-0.5rem);
+}
+
+.skills-column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    transform: translateY(1.2rem);
+    transition: opacity 1.4s ease, transform 1.4s ease;
+}
+
+.skills-column.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.skills-column h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    text-align: center;
+
+    opacity: 0.6;
+    margin-bottom: 2.2rem;
+
+    position: relative; 
+}
+
+.skills-column:nth-child(1) {
+    /* transform: translateY(-1.2rem); */
+    margin-top: -1.2rem;
+}
+
+.skills-column:nth-child(3) {
+    /* transform: translateY(1.2rem); */
+    margin-top: 1.2rem;
+}
+
+
+.skills-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 50%;
+    text-align: left;
+
+    /* position: relative;
+    left: 40%; */
+}
+
+.skills-column li {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.02em; 
+    font-size: 1.05rem;
+    line-height: 1.8;
+
+    text-align: left;
+    white-space: nowrap;
+}
+
+/* --------------------------------PORTFOLIO-------------------------------- */
+/* PORTFOLIO - design locked */
+#portfolio {
+    min-height: 100vh;
+    /* display: flex;
+    align-items: center; */
+    position: relative;
+    background-color: #f1f0ea;
+    padding: 24rem 2rem;
+
+    scroll-margin-top: -17rem;
+}
+
+.portfolio-inner {
+    max-width: 68.75rem;
+    /* width: 100%; */
+    margin: 0 auto;
+}
+
+#portfolio h2 {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: clamp(2.6rem, 4vw, 3.2rem);
+    letter-spacing: 0.25em;
+    text-indent: 0.25rem;
+    font-weight: 800;
+    margin-bottom: 5.5rem;
+    text-transform: uppercase;
+
+    text-align: center; 
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 20.5rem);
+    justify-content: center;
+    gap: 2.5rem;
+
+    /* perspective: 1200px; */
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+
+    background-color: #f7f6f1;
+    /* background-color: #f3f4ef; */
+    /* background-color: rgba(57, 70, 49, 0.06); */ /* åt det fröna hållet */
+    border-radius: 0.75rem;
+
+    padding: 2rem;
+    min-height: 22rem;
+
+    text-decoration: none;
+    color: inherit;
+
+    /* box-shadow: 0 0.6rem 1.8rem rgba(0,0,0, 0.06); */
+    /* box-shadow: 0 0.6rem 1.8rem rgba(57, 70, 49, 0.12); */
+    box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.6), /* ljus kant upptil med inset 0 1px 0. Skapar illusion av tjocklek. */
+        0 0.8rem 2.4rem rgba(57, 70, 49, 0.08);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.25s ease;
+
+    backface-visibility: hidden;
+}
+
+/* .project-card article {
+    display: flex;
+    flex-direction: column;
+
+    padding: 2rem;
+    min-height: 22rem;
+} */
+
+.project-card h3 {
+    font-family: "Chakra Petch", sans-serif;
+    letter-spacing: 0.02em;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem; 
+
+    /* text-transform: uppercase; */
+}
+
+.project-card p {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.7;
+
+    margin-bottom: auto;
+}
+
+.project-cta {
+    margin-top: 1.5rem;
+    font-weight: 500;
+    opacity: 0.85;
+
+    position: relative; 
+    padding-top: 1rem;
+}
+
+.project-cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 2rem;
+    height: 1px;
+
+    background-color: rgba(57, 70, 49, 0.3);
+}
+
+.project-card:hover {
+    /* transform: scale(1.02); */
+    transform: translateY(-0.25rem) scale(1.01);
+    box-shadow: 0 1.2rem 3.2rem rgba(57, 70, 49, 0.14);
+
+    cursor: pointer;
+}
+
+.project-card:focus-visible {
+    outline: none;
+    box-shadow:
+        0 0 0 0.25rem rgba(57, 70, 49, 0.18),
+        0 1.2rem 3.2rem rgba(57, 70, 49, 0.14);
 }

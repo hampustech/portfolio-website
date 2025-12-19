@@ -198,12 +198,16 @@
     padding: 6rem 2rem;
 
     overflow: hidden;
+
+    scroll-margin-top: -2rem;
+
+
 }
 
 .about-bg-text {
     position: absolute;
     /* top: 26%; */
-    top: 16.7rem;
+    top: 16.3rem;
     left: 50%;
     
     transform: translate(-50%, -50%);
@@ -231,7 +235,7 @@
     position: relative;
     z-index: 1;
 
-    max-width: 1100px;
+    max-width: 68.75rem;
     margin: 0 auto;
 
     display: grid; 
@@ -451,4 +455,107 @@
 
     text-align: left;
     white-space: nowrap;
+}
+
+/* --------------------------------PORTFOLIO-------------------------------- */
+/* PORTFOLIO */
+#portfolio {
+    min-height: 100vh;
+    /* display: flex;
+    align-items: center; */
+    position: relative;
+    background-color: #f1f0ea;
+    padding: 24rem 2rem;
+}
+
+.portfolio-inner {
+    max-width: 68.75rem;
+    /* width: 100%; */
+    margin: 0 auto;
+}
+
+#portfolio h2 {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: clamp(2.6rem, 4vw, 3.2rem);
+    letter-spacing: 0.25em;
+    text-indent: 0.25rem;
+    font-weight: 800;
+    margin-bottom: 5.5rem;
+    text-transform: uppercase;
+
+    text-align: center; 
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 20.5rem);
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+
+    padding: 2rem;
+    min-height: 22rem;
+
+    text-decoration: none;
+    color: inherit;
+
+    box-shadow: 0 0.6rem 1.8rem rgba(0,0,0, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* .project-card article {
+    display: flex;
+    flex-direction: column;
+
+    padding: 2rem;
+    min-height: 22rem;
+} */
+
+.project-card h3 {
+    font-family: "Chakra Petch", sans-serif;
+    /* letter-spacing: 0.25em; */
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem; 
+
+    /* text-transform: uppercase; */
+}
+
+.project-card p {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.7;
+
+    margin-bottom: auto;
+}
+
+.project-cta {
+    margin-top: 1.5rem;
+    font-weight: 500;
+    opacity: 0.85;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 1rem 2.6rem rgba(0, 0, 0, 0.1);
+
+    cursor: pointer;
+}
+
+.project-card:focus-visible {
+    outline: none;
+    box-shadow:
+        0 0 0 0.25rem rgba(57, 70, 49, 0.25),
+        0 1rem 2.6rem rgba(0, 0, 0, 0.1);
 }

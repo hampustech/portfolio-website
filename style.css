@@ -6,7 +6,7 @@
 
 
 /* --------------------------------HERO-------------------------------- */
-/* HERO */
+/* HERO - design locked*/
 #hero {
     min-height: 100vh;
     padding: 2rem;
@@ -186,7 +186,7 @@
 }
 
 /* --------------------------------ABOUT-------------------------------- */
-/* ABOUT */
+/* ABOUT - design locked */
 #about {
     /* outline: 2px solid red; */
 
@@ -310,7 +310,7 @@
 }
 
 /* --------------------------------SKILLZ-------------------------------- */
-/* SKILLZ */
+/* SKILLZ - design locked */
 #skills {
     position: relative;
     min-height: 100vh;
@@ -458,7 +458,7 @@
 }
 
 /* --------------------------------PORTFOLIO-------------------------------- */
-/* PORTFOLIO */
+/* PORTFOLIO - design locked */
 #portfolio {
     min-height: 100vh;
     /* display: flex;

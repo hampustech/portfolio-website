@@ -733,6 +733,11 @@
     transform: scale(0.98);
 }
 
+.testimonials-focus .testimonial.testimonial-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
 .testimonial-active {
     opacity: 1;
     transform: scale(1);

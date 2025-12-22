@@ -597,7 +597,7 @@
     margin-top: -6rem;
     background-color: #f1f0ea;
 
-    scroll-margin-top: 17rem;
+    scroll-margin-top: 10rem;
 }
 
 .testimonials-grid {
@@ -750,8 +750,10 @@
 /* CONTACT */
 #contact {
     min-height: 100vh;
-    padding: 22rem 2rem;
+    padding: 22rem 2rem 12rem 2rem;
     background-color: #f1f0ea;
+
+    scroll-margin-top: -16rem;
 }
 
 .contact-inner {
@@ -898,4 +900,63 @@
     width: 2rem;
     height: 1px;
     background-color: rgba(57, 70, 49, 0.35);
+}
+
+/* --------------------------------FOOTER-------------------------------- */
+/* FOOTER */
+
+.footer {
+    padding: 1rem 2rem 1rem 2rem; 
+    background-color: #f1f0ea;
+    border-top: 1px solid rgba(57, 70, 49, 0.12);
+}
+
+.footer-inner {
+    max-width: 68.75rem;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.footer-copy {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.85rem;
+    opacity: 0.5;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-nav a {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: #111;
+    opacity: 0.6;
+
+    position: relative;
+}
+
+.footer-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.3rem;
+
+    width: 100%;
+    height: 1px;
+    background-color: rgba(57, 70, 49, 0.3);
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.footer-nav a:hover::after {
+    transform: scaleX(1);
 }

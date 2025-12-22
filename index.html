@@ -249,15 +249,22 @@
                 <h2>Contact</h2>
 
                 <p>
-                    Want to get in touch or discuss a project?
+                    Want to get in touch or discuss a project?<br>
                     Feel free to send me a message.
                 </p>
+                <div class="contact-cv">
+                    <a href="cv/Hampus-Rogestam-CV.pdf" class="cv-download" download aria-label="Download CV as PDF">Download CV</a>
+                </div>
 
-                <a href="cv/Hampus-Rogestam-CV.pdf" class="cv-download" download aria-label="Download CV as PDF">Download CV</a>
+                <p id="thank-you" class="thank-you-message">
+                    Thank you for your message. <br>I'll get back to you as soon as possible.
+                </p>
 
                 <form action="https://formsubmit.co/092d9c7f59b1b3ee5502da9ebb0d4d00" method="post" class="contact-form">
 
                     <input type="hidden" name="_captcha" value="false">
+
+                    <input type="hidden" name="_next" value="http://127.0.0.1:5500/#thank-you">
 
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -281,14 +288,16 @@
           </section>
 
         <!-- -------------------------------FOOTER------------------------------- -->
-         <footer>
-            <p>© 2025 Hampus Rogestam</p>
+         <footer class="footer">
+            <div class="footer-inner">
+                <p class="footer-copy">© 2025 Hampus Rogestam</p>
 
-            <nav aria-label="Footer links">
-                <a href="https://www.linkedin.com/in/hampus-rogestam-051290388/" target="_blank" rel="noopener noreferrer" aria-label="Hampus Rogestam on LinkeDin">LinkedIn</a>
-                <a href="https://github.com/hrogestam" target="_blank" rel="noopener noreferrer" aria-label="Hampus Rogestam on GitHub">GitHub</a>
-                <a href="cv/Hampus-Rogestam-CV.pdf" download aria-label="Download CV as PDF">Download CV</a>
-            </nav>
+                <nav class="footer-nav" aria-label="Footer links">
+                    <a href="https://www.linkedin.com/in/hampus-rogestam-051290388/" target="_blank" rel="noopener noreferrer" aria-label="Hampus Rogestam on LinkeDin">LinkedIn</a>
+                    <a href="https://github.com/hrogestam" target="_blank" rel="noopener noreferrer" aria-label="Hampus Rogestam on GitHub">GitHub</a>
+                    <a href="cv/Hampus-Rogestam-CV.pdf" download aria-label="Download CV as PDF">Download CV</a>
+                </nav>
+            </div>
          </footer>
 <script src="script.js"></script>
 </body>

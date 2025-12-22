@@ -249,15 +249,22 @@
                 <h2>Contact</h2>
 
                 <p>
-                    Want to get in touch or discuss a project?
+                    Want to get in touch or discuss a project?<br>
                     Feel free to send me a message.
                 </p>
+                <div class="contact-cv">
+                    <a href="cv/Hampus-Rogestam-CV.pdf" class="cv-download" download aria-label="Download CV as PDF">Download CV</a>
+                </div>
 
-                <a href="cv/Hampus-Rogestam-CV.pdf" class="cv-download" download aria-label="Download CV as PDF">Download CV</a>
+                <p id="thank-you" class="thank-you-message">
+                    Thank you for your message. I'll get back to you as soon as possible.
+                </p>
 
                 <form action="https://formsubmit.co/092d9c7f59b1b3ee5502da9ebb0d4d00" method="post" class="contact-form">
 
                     <input type="hidden" name="_captcha" value="false">
+
+                    <input type="hidden" name="_next" value="http://127.0.0.1:5500/#thank-you">
 
                     <div class="form-group">
                         <label for="name">Name</label>

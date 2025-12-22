@@ -12,6 +12,9 @@ const revealElements = document.querySelectorAll('.reveal');
 const skillsTitle = document.querySelector('.skills-title');
 const skillColumns = document.querySelectorAll('.skills-column');
 
+const testimonialsSection = document.querySelector('#testimonials');
+const testimonials = document.querySelectorAll('.testimonial');
+
 // --------------------------------HERO--------------------------------
 
 let firstScrollHandled = false;
@@ -109,4 +112,64 @@ window.addEventListener('scroll', () => {
 
         skillsAnimated = true;
     }
+});
+
+// --------------------------------TESTIMONIALS--------------------------------
+// Funktion som sätter vilket tesimonial som är "aktivt"
+function setActiveTestimonial(activeIndex) {
+    // loopa igenom alla testimonials ett i taget
+    testimonials.forEach((testimonial, index) => {
+        // ta bort aktiv-klassen från alla testimonials
+        testimonial.classList.remove('testimonial-active');
+        // om detta testimonial har samma index som det aktiva
+        if (index === activeIndex) {
+            // lägg till klassen som markerar aktivt testimonial
+            testimonial.classList.add('testimonial-active');
+        }
+    });
+}
+
+// funktion som räknar ut vilket testimonial som är i fokus
+function updateTestimonialFocus() {
+    const viewportMiddle = window.innerHeight / 2; // räknar ut mitten av skärmen (viewport). innerHeight = höjden på webbläsarfönstret i px
+
+    let closestIndex = 0; // sparar index på det testimonial som är närmast mitten
+    let closestDistance = Infinity; // sparar avståndet till det närmaste testimonial.
+
+    // loopa igenom alla testimonials
+    testimonials.forEach((testimonial, index) => {
+        const rect = testimonial.getBoundingClientRect();
+        const testimonialMiddle = rect.top + rect.height / 2; // räknar ut mitten av detta testimonial
+        const distance = Math.abs(testimonialMiddle - viewportMiddle); // räkna ut avståndet mellan testimonials mitt och skärmens mitt
+
+        // kollar om avståndet är mindre än det vi sparat tidigare
+        if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = index;
+        }
+    });
+
+    // när närmaste testimonial är hittat, sätt det som aktivt
+    setActiveTestimonial(closestIndex);
+}
+
+function isTestimonialsInView() {
+    const rect = testimonialsSection.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
+}
+
+// Initialt fokus
+setActiveTestimonial(0);
+
+// Scroll-lyssnare
+window.addEventListener('scroll', () => {
+    if (window.innerWidth < 1024) return;
+
+    if (!isTestimonialsInView()) {
+        testimonialsSection.classList.remove('testimonials-focus');
+        return;
+    }
+
+    testimonialsSection.classList.add('testimonials-focus');
+    updateTestimonialFocus();
 });

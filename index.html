@@ -28,7 +28,7 @@
             <a href="#about" class="nav">About</a>
             <a href="#skills" class="nav">Skills</a>
             <a href="#portfolio" class="nav">Portfolio</a>
-            <a href="#testimonials" class="nav">Testimonials</a>
+            <a href="#testimonials" class="nav">Feedback</a>
             <a href="#contact" class="nav">Contact</a>
         </nav>
 
@@ -186,49 +186,54 @@
 
         <!-- -------------------------------TESTIMONIALS------------------------------- -->
          <section id="testimonials">
+            <div class="testimonials-grid" aria-hidden="true"></div>
             <div class="testimonials-inner">
-                <h2>Testimonials</h2>
+                <h2>Selected feedback</h2>
 
                 <article class="testimonial">
-                    <h3>Clear communication</h3>
-                    <p class="quote">
+                    <h3 class="testimonial-title">Clear communication</h3>
+                    <p class="testimonial-quote">
                         “Hampus is structured, reliable and delivers what he promises.
                         Communication was always clear and professional.”
                     </p>
-                    <p class="author">
+                    <p class="testimonial-author">
                         — Customer, Freshvent (Ventilation Company)
                     </p>
                 </article>
 
                 <article class="testimonial">
-                    <h3>Strong ownership</h3>
-                    <p class="quote">
-                        “Running complex projects with tight deadlines was never an issue.
-                        Hampus showed strong ownership and attention to detail.”
-                    </p>
-                    <p class="author">
-                        — Tomas Nilsson, Business Partner - PeakPods Real Estate
-                    </p>
+                    <h3 class="testimonial-title">Strong ownership</h3>
 
-                    <p class="quote">
-                        “Hampus presented a clear and well-structured business plan for urban hydroponic microgreen farming, utilizing unused spaces such as basements and underground facilities.
-                        The board saw strong potential both in the idea and in Hampus as a founder, and decided to invest SEK 1,000,000 in the company.”
-                    </p>
-                    <p class="author">
-                        — Mattias Ewald, Entrepreneur & Investor
-                    </p>
+                    <div class="testimonial-quotes">
+                        <p class="testimonial-quote">
+                            “Running complex projects with tight deadlines was never an issue.
+                            Hampus showed strong ownership and attention to detail.”
+                        </p>
+                        <p class="testimonial-author">
+                            — Tomas Nilsson, Business Partner - PeakPods Real Estate
+                        </p>
+
+                        <p class="testimonial-quote">
+                            “Hampus presented a clear and well-structured business plan for urban hydroponic microgreen farming, utilizing unused spaces such as basements and underground facilities.
+                            The board saw strong potential both in the idea and in Hampus as a founder, and decided to invest SEK 1,000,000 in the company.”
+                        </p>
+                        <p class="testimonial-author">
+                            — Mattias Ewald, Entrepreneur & Investor
+                        </p>
+                    </div>
                 </article>
 
                 <article class="testimonial">
-                    <h3>Proven delivery</h3>
-                        <p>
+                    <h3 class="testimonial-title">Proven delivery</h3>
+
+                        <p class="testimonial-quote">
                             Built and ran Freshvent, maintaining the highest customer satisfaction among Swedish ventilation companies and consistently top rankings on Reco.se.
                             Ranked <strong>#4 among Sweden's best HVAC companies in 2025</strong>.
                             (<a href="https://www.reco.se/freshvent-stockholm-ab-lidingo" target="_blank" rel="noopener noreferrer" class="testimonials-link">reviews</a>)
                             (<a href="https://www.reco.se/foretag/sverige-basta-foretag/vvs-foretag" target="_blank" rel="noopener noreferrer" class="testimonials-link">Swedens top 10 best HVAC-companies</a>)
                         </p>
 
-                        <p>
+                        <p class="testimonial-quote">
                             Co-founded <strong>PeakPods</strong>, a startup developing innovative prefabricated housing concepts with mirrored glass design. 
                             Contributed to product development and business strategy, resulting in a full-scale show unit exhibited at Nybygget, 
                             Arlanda's house expo.
@@ -250,7 +255,10 @@
 
                 <a href="cv/Hampus-Rogestam-CV.pdf" class="cv-download" download aria-label="Download CV as PDF">Download CV</a>
 
-                <form action="/contact" method="post" class="contact-form">
+                <form action="https://formsubmit.co/092d9c7f59b1b3ee5502da9ebb0d4d00" method="post" class="contact-form">
+
+                    <input type="hidden" name="_captcha" value="false">
+
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your name.." required>

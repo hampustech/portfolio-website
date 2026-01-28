@@ -4,6 +4,12 @@ const scrollCue = document.querySelector('.scroll-cue');
 const line = document.querySelector('.horizontal-line');
 const socialLinks = document.querySelector('.social-links');
 
+if (!heroNav || !scrollCue || !line || !socialLinks) {
+  console.warn("Hero elements missing");
+}
+
+
+
 const aboutSection = document.querySelector('#about');
 const aboutBgText = document.querySelector('.about-bg-text');
 
@@ -29,8 +35,8 @@ if (isSmallScreen) {
 let firstScrollHandled = false;
 let scrollDistance = 0;
 
-const UNLOCK_THRESHOLD = 500; /* varje 100 = 1 scroll */
-const UNLOCK_DELAY = 500; /* delay i ms */
+const UNLOCK_THRESHOLD = 500;
+const UNLOCK_DELAY = 500;
 
 if (!isSmallScreen) {
   /* lås scroll i början */
@@ -57,39 +63,6 @@ if (!isSmallScreen) {
       }
   }, { passive: false });
 }
-
-/* lås scroll i början */
-// document.body.classList.add('no-scroll');
-
-// window.addEventListener('wheel', (event) => {
-//     if (firstScrollHandled) {
-//         return;
-//     }
-
-//     event.preventDefault();
-
-//     /* samla hur mycket användaren scrollar */
-//     scrollDistance += Math.abs(event.deltaY);
-
-//     /* räkna ut hur stor del av linjen som ska visas */
-//     const progress = Math.min(scrollDistance / UNLOCK_THRESHOLD, 1);
-//     /* sätt bredd i % */
-//     line.style.width = `${progress * 100}%`;
-
-//     /* lås upp först när tröskeln nås */
-//     if (scrollDistance >= UNLOCK_THRESHOLD) {
-//         heroNav.classList.add('is-visible'); /* visa navbar */
-//         socialLinks.classList.add('is-visible'); /* visa social-link ikoner */
-//         scrollCue.classList.add('is-hidden'); /* dölj scroll-hint */
-
-//         /* vänta innan scroll släpps */
-//         setTimeout(() => {
-//             document.body.classList.remove('no-scroll'); /* lås upp scroll */
-//             firstScrollHandled = true;
-//         }, UNLOCK_DELAY);
-//     }
-// }, { passive: false });
-
 // --------------------------------ABOUT--------------------------------
 
 /* kolla om about-sektionen syns i fönstret */
@@ -100,14 +73,13 @@ function isAboutInView() {
 
 /* varje gång använadern scrollar kör denna funktion */
 window.addEventListener('scroll', () => {
-    if (!aboutSection || !aboutBgText) return; // om elementen inte finns i dom så avbryt
-    if (!isAboutInView()) return; // om About inte är synlig så avbryt
+    if (!aboutSection || !aboutBgText) return; 
+    if (!isAboutInView()) return; 
 
     /* --- PARALLAX --- */
-    const scrollY = window.scrollY; // scrollY är hur många pixlar sidan har scrollat (högst upp = 0, scrolla ner 500 = 500)
-    const offset = scrollY * 0.15; // rör sig 15% i förhållande till scrollen / hur sidan rör sig
+    const scrollY = window.scrollY;
+    const offset = scrollY * 0.15;
 
-    /* behåll elementet horisontellt centrerat men flytta det lite nedåt ju mer man scrollar */
     aboutBgText.style.transform =
         `translate(-50%, calc(-50% + ${offset}px))`;
 
@@ -124,7 +96,7 @@ window.addEventListener('scroll', () => {
 });
 
 // --------------------------------SKILLZ--------------------------------
-let skillsAnimated = false; // kör bara en gång
+let skillsAnimated = false;
 
 window.addEventListener('scroll', () => {
     if (skillsAnimated) return;
@@ -132,7 +104,6 @@ window.addEventListener('scroll', () => {
 
     const titleRect = skillsTitle.getBoundingClientRect();
 
-    // när skills-rubriken når in i viewport
     if (titleRect.top < window.innerHeight * 0.85) {
 
         // 1. visa rubriken

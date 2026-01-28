@@ -121,6 +121,11 @@ body {
   opacity: 0.85;
 }
 
+.meta-primary {
+  opacity: 1;
+  font-weight: 600;
+}
+
 .dot {
   opacity: 0.5;
 }
@@ -214,7 +219,18 @@ body {
 }
 
 .pill-row {
+  display: flex;
+  justify-content: left;
+  gap: 1.5rem;
+
+  padding: 0.6rem 0;
+  font-size: 0.9rem;
+
   margin-bottom: 0.6rem;
+}
+
+.pill-row span {
+    white-space: nowrap;
 }
 
 .subhead {
@@ -280,6 +296,10 @@ body {
 
   .meta a::after {
     transform: scaleX(1);
+  }
+
+    a[download] {
+    display: none;
   }
 
   .item,

@@ -829,6 +829,25 @@ body { overflow-wrap: anywhere; }
     background-color: rgba(57, 70, 49, 0.35);
 }
 
+.cv-download::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.3rem;
+
+    width: 100%;
+    height: 1px;
+    background-color: rgba(57, 70, 49, 0.3);
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.cv-download:hover::after {
+    transform: scaleX(1);
+}
+
 .thank-you-message {
     display: none;
     font-family: "Space Grotesk", sans-serif;

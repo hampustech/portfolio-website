@@ -1024,12 +1024,19 @@ body { overflow-wrap: anywhere; }
     font-size: 0.95rem;
     top: calc(50% + 3.5rem);
   }
+    #about {
+    scroll-margin-top: 0rem;
+  }
 
   .about-text h2 { font-size: 1.9rem; }
   .background-text,
   .what-i-do {
     max-width: 100%;
   }
+
+    #skills {
+        scroll-margin-top: -2rem;
+    }
 
     .skills-columns {
     grid-template-columns: 1fr;
@@ -1052,6 +1059,10 @@ body { overflow-wrap: anywhere; }
 
   #portfolio { padding: 7rem 1.25rem; }
 
+  #portfolio {
+    scroll-margin-top: -3rem;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
@@ -1060,8 +1071,49 @@ body { overflow-wrap: anywhere; }
     padding-top: 12rem;
   }
 
+    #testimonials {
+    padding-bottom: 6rem;
+  }
+
   #testimonials h2 { font-size: 2rem; }
+
+    #testimonials {
+    scroll-margin-top: -8rem;
+  }
+
+  #contact {
+    padding-top: 1rem;
 }
+
+    #contact {
+        scroll-margin-top: 3rem;
+    }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .about-bg-text {
+    font-size: clamp(11rem, 24vw, 28rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .about-bg-text {
+    top: 16rem;
+  }
+}
+
 
 @media (max-width: 1050px) {
   .background-text {
@@ -1072,6 +1124,9 @@ body { overflow-wrap: anywhere; }
 @media (max-width: 460px) {
   .hero-nav {
     top: calc(50% - 5.2rem);
+  }
+    .about-bg-text {
+    top: 14rem;
   }
 }
 
@@ -1090,10 +1145,23 @@ body { overflow-wrap: anywhere; }
    }
 }
 
+@media (max-width: 400px) {
+    .about-bg-text {
+    top: 13rem;
+  }
+    .about-bg-text {
+    font-size: clamp(6.5rem, 18vw, 14rem);
+    letter-spacing: 0.15em;
+  }
+}
+
 @media (max-width: 370px) {
   #portfolio h2 {
     font-size: 2.2rem;
     letter-spacing: 0.18em;
+  }
+    .about-bg-text {
+    top: 13rem;
   }
 }
 

@@ -4,10 +4,6 @@ const scrollCue = document.querySelector('.scroll-cue');
 const line = document.querySelector('.horizontal-line');
 const socialLinks = document.querySelector('.social-links');
 
-if (!heroNav || !scrollCue || !line || !socialLinks) {
-  console.warn("Hero elements missing");
-}
-
 const mediaQuery = window.matchMedia("(max-width: 900px)");
 
 const aboutSection = document.querySelector('#about');

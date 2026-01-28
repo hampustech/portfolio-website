@@ -1064,7 +1064,8 @@ body { overflow-wrap: anywhere; }
   }
 
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 24rem);
+    justify-content: center;
   }
 
   #testimonials {
@@ -1137,6 +1138,16 @@ body { overflow-wrap: anywhere; }
    .about-text h2 {
     font-size: 1.6rem;
    }
+         .projects-grid {
+    grid-template-columns: minmax(0, 16rem);
+    justify-content: center;
+  }
+
+      .project-card {
+    min-height: 0;
+    height: 16rem;
+    overflow: hidden;
+  }
 }
 
 @media (max-width: 420px) {
@@ -1157,7 +1168,7 @@ body { overflow-wrap: anywhere; }
 
 @media (max-width: 370px) {
   #portfolio h2 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     letter-spacing: 0.18em;
   }
     .about-bg-text {
@@ -1170,6 +1181,13 @@ body { overflow-wrap: anywhere; }
         font-size: 2rem;
         letter-spacing: 0.12em;
     }
+}
+
+@media (min-width: 300px) and (max-width: 330px) {
+  #portfolio h2 {
+    font-size: 2.2rem;
+    letter-spacing: 0.18em;
+  }
 }
 
 @media (max-width: 310px) {
@@ -1200,109 +1218,3 @@ body { overflow-wrap: anywhere; }
      letter-spacing: 0.12em;
     }
 }
-
-/* ====== SURFPLATTA ======
-@media (min-width: 601px) and (max-width: 900px) 
-{
-  .hero-nav {
-    gap: 1.25rem;
-    flex-wrap: wrap;
-    width: min(92vw, 680px);
-    justify-content: center;
-  }
-
-  .social-links a {
-    width: 3rem;
-    height: 3rem;
-  }
-
-    #about { padding: 4rem 1.25rem; }
-
-  .about-inner {
-    grid-template-columns: 1fr;
-    row-gap: 2rem;
-  }
-
-  .about-text h2 { font-size: 2.1rem; }
-
-  /* Ta bort höger-justering på mindre skärmar 
-  .about-portrait,
-  .what-i-do {
-    justify-self: start;
-  }
-
-  .about-portrait {
-    max-width: 280px;
-  }
-
-  /* Bakgrundstexten kan bli för stor på mobil, tona ner 
-  .about-bg-text {
-    opacity: 0.03;
-    letter-spacing: 0.12em;
-  }
-
-    #skills { padding: 4rem 1.25rem; }
-
-  .skills-columns {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    transform: none;
-  }
-
-  /* Ta bort konstiga vertikala offsets på mindre skärmar 
-  .skills-column:nth-child(1),
-  .skills-column:nth-child(3) {
-    margin-top: 0;
-  }
-
-  .skills-column ul {
-    padding-left: 0;
-    text-align: center;
-  }
-
-  .skills-column li {
-    text-align: center;
-    white-space: normal; /* så text kan radbryta 
-  }
-
-  #portfolio { padding: 10rem 1.25rem; } /* 24rem är för mycket på mindre skärmar 
-
-  .projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
-  }
-
-  .project-card { min-height: auto; }
-
-  #testimonials {
-    padding: 4rem 1.25rem;
-    margin-top: 0;
-    scroll-margin-top: 2rem;
-  }
-
-  .testimonials-inner {
-    padding-left: 0;
-  }
-
-  .testimonials-inner::before {
-    display: none; /* vänster-linjen 
-  }
-
-  #testimonials h2 {
-    margin-bottom: 4rem;
-  }
-
-  .testimonial {
-    margin: 0 auto 4rem auto;
-  }
-
-  #contact {
-    padding: 8rem 1.25rem 6rem 1.25rem;
-    scroll-margin-top: 2rem;
-  }
-
-  .contact-cv {
-    justify-content: center;
-    padding-right: 0;
-  }
-} */

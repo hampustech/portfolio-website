@@ -15,6 +15,15 @@ const skillColumns = document.querySelectorAll('.skills-column');
 const testimonialsSection = document.querySelector('#testimonials');
 const testimonials = document.querySelectorAll('.testimonial');
 
+const isSmallScreen = window.matchMedia("(max-width: 900px)").matches;
+
+if (isSmallScreen) {
+  heroNav.classList.add('is-visible');
+  socialLinks.classList.add('is-visible');
+  scrollCue.classList.add('is-hidden');
+  line.style.width = "100%";
+}
+
 // --------------------------------HERO--------------------------------
 
 let firstScrollHandled = false;
@@ -23,37 +32,63 @@ let scrollDistance = 0;
 const UNLOCK_THRESHOLD = 500; /* varje 100 = 1 scroll */
 const UNLOCK_DELAY = 500; /* delay i ms */
 
+if (!isSmallScreen) {
+  /* lås scroll i början */
+  document.body.classList.add('no-scroll');
+
+  window.addEventListener('wheel', (event) => {
+      if (firstScrollHandled) return;
+
+      event.preventDefault();
+
+      scrollDistance += Math.abs(event.deltaY);
+      const progress = Math.min(scrollDistance / UNLOCK_THRESHOLD, 1);
+      line.style.width = `${progress * 100}%`;
+
+      if (scrollDistance >= UNLOCK_THRESHOLD) {
+          heroNav.classList.add('is-visible');
+          socialLinks.classList.add('is-visible');
+          scrollCue.classList.add('is-hidden');
+
+          setTimeout(() => {
+              document.body.classList.remove('no-scroll');
+              firstScrollHandled = true;
+          }, UNLOCK_DELAY);
+      }
+  }, { passive: false });
+}
+
 /* lås scroll i början */
-document.body.classList.add('no-scroll');
+// document.body.classList.add('no-scroll');
 
-window.addEventListener('wheel', (event) => {
-    if (firstScrollHandled) {
-        return;
-    }
+// window.addEventListener('wheel', (event) => {
+//     if (firstScrollHandled) {
+//         return;
+//     }
 
-    event.preventDefault();
+//     event.preventDefault();
 
-    /* samla hur mycket användaren scrollar */
-    scrollDistance += Math.abs(event.deltaY);
+//     /* samla hur mycket användaren scrollar */
+//     scrollDistance += Math.abs(event.deltaY);
 
-    /* räkna ut hur stor del av linjen som ska visas */
-    const progress = Math.min(scrollDistance / UNLOCK_THRESHOLD, 1);
-    /* sätt bredd i % */
-    line.style.width = `${progress * 100}%`;
+//     /* räkna ut hur stor del av linjen som ska visas */
+//     const progress = Math.min(scrollDistance / UNLOCK_THRESHOLD, 1);
+//     /* sätt bredd i % */
+//     line.style.width = `${progress * 100}%`;
 
-    /* lås upp först när tröskeln nås */
-    if (scrollDistance >= UNLOCK_THRESHOLD) {
-        heroNav.classList.add('is-visible'); /* visa navbar */
-        socialLinks.classList.add('is-visible'); /* visa social-link ikoner */
-        scrollCue.classList.add('is-hidden'); /* dölj scroll-hint */
+//     /* lås upp först när tröskeln nås */
+//     if (scrollDistance >= UNLOCK_THRESHOLD) {
+//         heroNav.classList.add('is-visible'); /* visa navbar */
+//         socialLinks.classList.add('is-visible'); /* visa social-link ikoner */
+//         scrollCue.classList.add('is-hidden'); /* dölj scroll-hint */
 
-        /* vänta innan scroll släpps */
-        setTimeout(() => {
-            document.body.classList.remove('no-scroll'); /* lås upp scroll */
-            firstScrollHandled = true;
-        }, UNLOCK_DELAY);
-    }
-}, { passive: false });
+//         /* vänta innan scroll släpps */
+//         setTimeout(() => {
+//             document.body.classList.remove('no-scroll'); /* lås upp scroll */
+//             firstScrollHandled = true;
+//         }, UNLOCK_DELAY);
+//     }
+// }, { passive: false });
 
 // --------------------------------ABOUT--------------------------------
 
@@ -163,7 +198,7 @@ setActiveTestimonial(0);
 
 // Scroll-lyssnare
 window.addEventListener('scroll', () => {
-    if (window.innerWidth < 1024) return;
+    if (window.innerWidth < 350) return;
 
     if (!isTestimonialsInView()) {
         testimonialsSection.classList.remove('testimonials-focus');
@@ -173,3 +208,5 @@ window.addEventListener('scroll', () => {
     testimonialsSection.classList.add('testimonials-focus');
     updateTestimonialFocus();
 });
+
+setTimeout(() => window.dispatchEvent(new Event('scroll')), 0);

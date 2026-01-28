@@ -1,3 +1,14 @@
+/* ---------------------------RESPONSIVE BAS--------------------------- */
+* { box-sizing: border-box; }
+
+html, body { width: 100%; overflow-x: hidden; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* Minskar risken att stora ord/länkar spränger layout */
+body { overflow-wrap: anywhere; }
+
+
 /* ---------------------------GLOBAL HELPERS--------------------------- */
 .no-scroll {
     overflow: hidden;
@@ -490,7 +501,7 @@
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 20.5rem);
+    grid-template-columns: repeat(3, minmax(0, 20.5rem));
     justify-content: center;
     gap: 2.5rem;
 
@@ -960,3 +971,260 @@
 .footer-nav a:hover::after {
     transform: scaleX(1);
 }
+
+/* ---------------------------MOBIL--------------------------- */
+
+@media (max-width: 900px) {
+
+  #hero {
+    padding: 1.25rem;
+  }
+
+  #hero h1 { font-size: 2rem; }
+  #hero h2 { font-size: 1.05rem; }
+
+  /* Gör nav till "radbrytande" och mindre gap */
+  .hero-nav {
+    top: calc(50% - 3.5rem);
+    width: min(92vw, 520px);
+    gap: 0.9rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-nav a {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.35rem;
+  }
+
+  /* Ta bort aggressiva hover-effekter på touch */
+  .hero-nav a:hover { transform: none; }
+  .hero-nav a:hover ~ a { transform: none; }
+  .hero-nav a:has(~a:hover) { transform: none; }
+
+  /* Social icons mindre + lite tajtare */
+  .social-links {
+    top: 1.1rem;
+    right: 1.1rem;
+    gap: 0.75rem;
+  }
+
+  .social-links a {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .scroll-cue {
+    font-size: 0.95rem;
+    top: calc(50% + 3.5rem);
+  }
+
+  .about-text h2 { font-size: 1.9rem; }
+  .background-text,
+  .what-i-do {
+    max-width: 100%;
+  }
+
+    .skills-columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+    .skills-column { align-items: center; }
+
+  .skills-column ul {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .skills-column li {
+    text-align: center;
+    white-space: normal;
+  }
+
+  .skills-title { margin-bottom: 3rem; }
+
+  #portfolio { padding: 7rem 1.25rem; }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #testimonials h2 { font-size: 2rem; }
+}
+
+@media (max-width: 1050px) {
+  .background-text {
+    margin-right: 2rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .hero-nav {
+    top: calc(50% - 5.2rem);
+  }
+}
+
+@media (max-width: 450px) {
+  #hero {
+    padding-right: 8rem;
+  }
+   .about-text h2 {
+    font-size: 1.6rem;
+   }
+}
+
+@media (max-width: 420px) {
+   .about-text h2 {
+    font-size: 1.4rem;
+   }
+}
+
+@media (max-width: 370px) {
+  #portfolio h2 {
+    font-size: 2.2rem;
+    letter-spacing: 0.18em;
+  }
+}
+
+@media (max-width: 340px) {
+    #testimonials h2 {
+        font-size: 2rem;
+        letter-spacing: 0.12em;
+    }
+}
+
+@media (max-width: 310px) {
+    #hero h1 {
+     font-size: 1.5rem;
+     letter-spacing: 0.12em;
+    }
+}
+
+@media (max-width: 300px) {
+  #portfolio h2 {
+    font-size: 2rem;
+    letter-spacing: 0.12em;
+  }
+
+    #testimonials h2 {
+     font-size: 1.5rem;
+     letter-spacing: 0.12em;
+    }
+
+  #skills h2 {
+    font-size: 2rem;
+    letter-spacing: 0.12em;
+  }
+
+      #hero h1 {
+     font-size: 1.2rem;
+     letter-spacing: 0.12em;
+    }
+}
+
+/* ====== SURFPLATTA ======
+@media (min-width: 601px) and (max-width: 900px) 
+{
+  .hero-nav {
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    width: min(92vw, 680px);
+    justify-content: center;
+  }
+
+  .social-links a {
+    width: 3rem;
+    height: 3rem;
+  }
+
+    #about { padding: 4rem 1.25rem; }
+
+  .about-inner {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+
+  .about-text h2 { font-size: 2.1rem; }
+
+  /* Ta bort höger-justering på mindre skärmar 
+  .about-portrait,
+  .what-i-do {
+    justify-self: start;
+  }
+
+  .about-portrait {
+    max-width: 280px;
+  }
+
+  /* Bakgrundstexten kan bli för stor på mobil, tona ner 
+  .about-bg-text {
+    opacity: 0.03;
+    letter-spacing: 0.12em;
+  }
+
+    #skills { padding: 4rem 1.25rem; }
+
+  .skills-columns {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    transform: none;
+  }
+
+  /* Ta bort konstiga vertikala offsets på mindre skärmar 
+  .skills-column:nth-child(1),
+  .skills-column:nth-child(3) {
+    margin-top: 0;
+  }
+
+  .skills-column ul {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .skills-column li {
+    text-align: center;
+    white-space: normal; /* så text kan radbryta 
+  }
+
+  #portfolio { padding: 10rem 1.25rem; } /* 24rem är för mycket på mindre skärmar 
+
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .project-card { min-height: auto; }
+
+  #testimonials {
+    padding: 4rem 1.25rem;
+    margin-top: 0;
+    scroll-margin-top: 2rem;
+  }
+
+  .testimonials-inner {
+    padding-left: 0;
+  }
+
+  .testimonials-inner::before {
+    display: none; /* vänster-linjen 
+  }
+
+  #testimonials h2 {
+    margin-bottom: 4rem;
+  }
+
+  .testimonial {
+    margin: 0 auto 4rem auto;
+  }
+
+  #contact {
+    padding: 8rem 1.25rem 6rem 1.25rem;
+    scroll-margin-top: 2rem;
+  }
+
+  .contact-cv {
+    justify-content: center;
+    padding-right: 0;
+  }
+} */

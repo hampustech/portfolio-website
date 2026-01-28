@@ -198,7 +198,7 @@ setActiveTestimonial(0);
 
 // Scroll-lyssnare
 window.addEventListener('scroll', () => {
-    if (window.innerWidth < 350) return;
+    if (window.innerWidth < 300) return;
 
     if (!isTestimonialsInView()) {
         testimonialsSection.classList.remove('testimonials-focus');

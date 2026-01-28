@@ -1,6 +1,12 @@
 /* ---------------------------RESPONSIVE BAS--------------------------- */
 * { box-sizing: border-box; }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #f1f0ea;
+}
+
 html, body { width: 100%; overflow-x: hidden; }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -604,11 +610,11 @@ body { overflow-wrap: anywhere; }
 #testimonials {
     min-height: 100vh;
     position: relative;
-    padding: 1rem 2rem;
+    padding: 12rem 2rem;
     margin-top: -6rem;
     background-color: #f1f0ea;
 
-    scroll-margin-top: 10rem;
+    scroll-margin-top: 0rem;
 }
 
 .testimonials-grid {
@@ -761,10 +767,10 @@ body { overflow-wrap: anywhere; }
 /* CONTACT */
 #contact {
     min-height: 100vh;
-    padding: 22rem 2rem 12rem 2rem;
+    padding: 6rem 2rem 12rem 2rem;
     background-color: #f1f0ea;
 
-    scroll-margin-top: -16rem;
+    scroll-margin-top: 4rem;
 }
 
 .contact-inner {
@@ -1048,6 +1054,10 @@ body { overflow-wrap: anywhere; }
 
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  #testimonials {
+    padding-top: 12rem;
   }
 
   #testimonials h2 { font-size: 2rem; }

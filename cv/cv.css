@@ -1,0 +1,296 @@
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("../fonts/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("../fonts/SpaceGrotesk-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("../fonts/SpaceGrotesk-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kode Mono";
+  src: url("../fonts/KodeMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #f1f0ea;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  color: #111;
+  font-family: "Space Grotesk", sans-serif;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.cv-page {
+  position: relative;
+
+  background-color: #f1f0ea;
+
+  margin: 1rem auto;
+  padding: 1.2rem;
+
+  width: min(100%, 72rem);
+}
+
+.bg-text {
+  position: absolute;
+  left: 50%;
+  top: 6.5rem;
+
+  transform: translate(-50%, -50%);
+
+  font-family: "Kode Mono", monospace;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  font-size: clamp(4rem, 12vw, 9rem);
+
+  opacity: 0.05;
+
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.cv-header {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  gap: 1rem;
+
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.name {
+  margin: 0;
+
+  font-size: clamp(1.9rem, 3.2vw, 2.35rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+
+  opacity: 0.95;
+}
+
+.tagline {
+  margin: 0.4rem 0 0;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  opacity: 0.75;
+}
+
+.meta {
+  margin-top: 0.75rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.dot {
+  opacity: 0.5;
+}
+
+.meta a {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.meta a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.18rem;
+
+  width: 100%;
+  height: 1px;
+
+  background-color: rgba(57, 70, 49, 0.3);
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.meta a:hover::after {
+  transform: scaleX(1);
+}
+
+.header-right {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.mini-card {
+  background: transparent;
+
+  border-left: 2px solid rgba(57, 70, 49, 0.22);
+  padding-left: 0.85rem;
+}
+
+.mini-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  opacity: 0.6;
+}
+
+.mini-list {
+  margin-top: 0.4rem;
+
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+
+  background-color: #f7f6f1;
+  border-radius: 0.9rem;
+
+  padding: 0.95rem;
+  margin-bottom: 0.85rem;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 0.8rem 2.4rem rgba(57, 70, 49, 0.08);
+}
+
+.section-title {
+  margin: 0 0 0.6rem;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  opacity: 0.6;
+}
+
+.divider {
+  margin: 0.9rem 0 0.7rem;
+  height: 1px;
+  background-color: rgba(57, 70, 49, 0.16);
+}
+
+.pill-row {
+  margin-bottom: 0.6rem;
+}
+
+.subhead {
+  margin-top: 0.8rem;
+}
+
+.text.small {
+  margin-top: 0.3rem;
+}
+
+.cv-footer {
+  display: flex;
+  justify-content: center;
+  gap: 1.8rem;
+
+  text-align: center;
+  font-size: 0.85rem;
+
+  opacity: 0.5;
+}
+
+/* ---------------------------RESPONSIVE--------------------------- */
+
+@media (min-width: 56rem) {
+  .cv-header {
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 1.25rem;
+  }
+
+  .cv-page {
+    width: 210mm;
+    min-height: 297mm;
+
+    margin: 1.25rem auto;
+    padding: 2.25rem;
+  }
+}
+
+@page {
+  size: A4;
+  margin-top: 18mm;
+  margin-right: 15mm;
+  margin-bottom: 18mm;
+  margin-left: 15mm;
+}
+
+@media print {
+  html {
+    font-size: 12px;
+  }
+
+  body {
+    background-color: #f1f0ea;
+  }
+
+  .cv-page {
+    width: auto;
+    min-height: auto;
+
+    margin: 0;
+    padding: 2.25rem;
+  }
+
+  .meta a::after {
+    transform: scaleX(1);
+  }
+
+  .item,
+  .item-top,
+  .bullets {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .card {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+}

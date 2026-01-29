@@ -1,4 +1,6 @@
 
+const langSwitch = document.querySelector('.lang-switch');
+
 const heroNav = document.querySelector('.hero-nav');
 const scrollCue = document.querySelector('.scroll-cue');
 const line = document.querySelector('.horizontal-line');
@@ -23,6 +25,9 @@ function handleScreenChange(e) {
   if (isSmallScreen) {
     heroNav.classList.add('is-visible');
     socialLinks.classList.add('is-visible');
+    langSwitch?.classList.add('is-visible');
+
+
     scrollCue.classList.add('is-hidden');
     line.style.width = "100%";
 
@@ -55,6 +60,8 @@ if (!mediaQuery.matches) {
       if (scrollDistance >= UNLOCK_THRESHOLD) {
           heroNav.classList.add('is-visible');
           socialLinks.classList.add('is-visible');
+          langSwitch?.classList.add('is-visible');
+
           scrollCue.classList.add('is-hidden');
 
           setTimeout(() => {

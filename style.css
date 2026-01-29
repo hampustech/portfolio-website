@@ -1041,6 +1041,39 @@ body { overflow-wrap: anywhere; }
     height: 2.4rem;
   }
 
+  .social-cv {
+  margin-top: 0.6rem;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  text-decoration: none;
+  color: #111;
+  opacity: 0.75;
+
+  position: relative;
+}
+
+.social-cv::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+
+  width: 100%;
+  height: 1px;
+  background-color: rgba(57, 70, 49, 0.3);
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.social-cv:hover::after {
+  transform: scaleX(1);
+}
+
   .scroll-cue {
     font-size: 0.95rem;
     top: calc(50% + 3.5rem);

@@ -25,7 +25,6 @@ function handleScreenChange(e) {
   if (isSmallScreen) {
     heroNav.classList.add('is-visible');
     socialLinks.classList.add('is-visible');
-    langSwitch?.classList.add('is-visible');
 
 
     scrollCue.classList.add('is-hidden');
@@ -60,7 +59,6 @@ if (!mediaQuery.matches) {
       if (scrollDistance >= UNLOCK_THRESHOLD) {
           heroNav.classList.add('is-visible');
           socialLinks.classList.add('is-visible');
-          langSwitch?.classList.add('is-visible');
 
           scrollCue.classList.add('is-hidden');
 

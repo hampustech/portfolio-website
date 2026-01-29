@@ -79,24 +79,25 @@ body { overflow-wrap: anywhere; }
   letter-spacing: 0.14em;
   text-transform: uppercase;
 
-  opacity: 0;
-  transform: translateY(-0.5rem);
-  pointer-events: none;
+  opacity: 0.85;
+  transform: none;
+  pointer-events: auto;
 
-  transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
+  transition: opacity 0.2s ease;
 }
 
-.lang-switch.is-visible {
+.lang-switch:hover {
   opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
 }
 
 .lang-link,
 .lang-current {
   color: #111;
-  opacity: 0.75;
   text-decoration: none;
+}
+
+.lang-link {
+  opacity: 0.75;
 }
 
 .lang-current {
@@ -104,7 +105,6 @@ body { overflow-wrap: anywhere; }
 }
 
 .lang-link:hover {
-  opacity: 1;
   text-decoration: underline;
 }
 

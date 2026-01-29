@@ -65,13 +65,25 @@ body {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+
+  opacity: 0.85;
+  pointer-events: auto;
+
+  transition: opacity 0.2s ease;
+}
+
+.lang-switch:hover {
+  opacity: 1;
 }
 
 .lang-link,
 .lang-current {
   color: #111;
-  opacity: 0.75;
   text-decoration: none;
+}
+
+.lang-link {
+  opacity: 0.75;
 }
 
 .lang-current {
@@ -79,7 +91,6 @@ body {
 }
 
 .lang-link:hover {
-  opacity: 1;
   text-decoration: underline;
 }
 

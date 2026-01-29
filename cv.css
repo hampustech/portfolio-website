@@ -297,8 +297,22 @@ body {
 }
 
 /* ---------------------------RESPONSIVE--------------------------- */
+@media (max-width: 599px) {
+  .lang-switch {
+    top: 0.4rem;
+    left: 1.3rem;
+  }
+}
 
-@media (min-width: 56rem) {
+@media (min-width: 600px) and (max-width: 799px) {
+    .lang-switch {
+    top: 0.4rem;
+    left: 1.3rem;
+  }
+}
+
+
+@media (min-width: 800px) {
   .cv-header {
     grid-template-columns: 1.3fr 0.7fr;
     gap: 1.25rem;

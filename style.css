@@ -103,6 +103,26 @@ body { overflow-wrap: anywhere; }
 }
 
 .hero-nav {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: flex;
+  gap: 2rem;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transform: translateX(-50%) translateY(calc(-2rem + 0.5rem));
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+
+/* .hero-nav {
     font-family: "Space Grotesk", sans-serif;
     font-weight: 600;
     letter-spacing: 0.05rem;
@@ -120,7 +140,7 @@ body { overflow-wrap: anywhere; }
     transform: translateX(-50%) translateY(0.5rem);
 
     transition: opacity 1.2s ease, transform 1.2s ease;
-}
+} */
 
 .hero-nav a {
     position: relative;
@@ -148,13 +168,18 @@ body { overflow-wrap: anywhere; }
     transform: translateX(-1rem);
 }
 
-
 .hero-nav.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(-2rem);
+}
+
+/* .hero-nav.is-visible {
     opacity: 1;
     pointer-events: auto;
     
     transform: translateX(-50%) translateY(0);
-}
+} */
 
 .scroll-cue {
     font-family: "Space Grotesk", sans-serif;
@@ -1014,12 +1039,17 @@ body { overflow-wrap: anywhere; }
   #hero h2 { font-size: 1.05rem; }
 
   .hero-nav {
-    top: calc(50% - 3.5rem);
+    top: 50%;
+    /* top: calc(50% - 3.5rem); */
     width: min(92vw, 520px);
     gap: 0.9rem;
     justify-content: center;
     flex-wrap: wrap;
   }
+
+  .hero-nav.is-visible {
+  transform: translateX(-50%) translateY(-2.4rem);
+}
 
   .hero-nav a {
     font-size: 0.95rem;
@@ -1171,9 +1201,13 @@ body { overflow-wrap: anywhere; }
 
 @media (max-width: 460px) {
   .hero-nav {
-    top: calc(55% - 5.2rem);
+    top: 50%;
   }
-    .about-bg-text {
+  .hero-nav.is-visible { 
+    transform: translateX(-50%) translateY(-2.4rem); 
+}
+
+.about-bg-text {
     top: 14rem;
   }
 }

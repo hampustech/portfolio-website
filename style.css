@@ -899,17 +899,23 @@ body { overflow-wrap: anywhere; }
 }
 
 .contact-form button {
-    align-self: flex-start;
-    background: none;
-    border: none;
+  align-self: flex-start;
 
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 0.95rem;
-    font-weight: 500;
+  -webkit-appearance: none;
+  appearance: none;
 
-    cursor: pointer;
-    padding-top: 1rem;
-    position: relative;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+
+  color: #111;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  cursor: pointer;
+  padding-top: 1rem;
+  position: relative;
 }
 
 .contact-form button::before {
@@ -921,6 +927,25 @@ body { overflow-wrap: anywhere; }
     width: 2rem;
     height: 1px;
     background-color: rgba(57, 70, 49, 0.35);
+}
+
+.contact-form button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.3rem;
+
+    width: 100%;
+    height: 1px;
+    background-color: rgba(57, 70, 49, 0.3);
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.contact-form button:hover::after {
+    transform: scaleX(1);
 }
 
 .footer {

@@ -121,27 +121,6 @@ body { overflow-wrap: anywhere; }
   transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
-
-/* .hero-nav {
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: 600;
-    letter-spacing: 0.05rem;
-
-    position: absolute;
-    top: calc(50% - 2rem);
-    left: 50%;
-
-    display: flex;
-    gap: 2rem;
-
-    opacity: 0;
-    pointer-events: none;
-
-    transform: translateX(-50%) translateY(0.5rem);
-
-    transition: opacity 1.2s ease, transform 1.2s ease;
-} */
-
 .hero-nav a {
     position: relative;
     text-decoration: none;
@@ -173,13 +152,6 @@ body { overflow-wrap: anywhere; }
   pointer-events: auto;
   transform: translateX(-50%) translateY(-2rem);
 }
-
-/* .hero-nav.is-visible {
-    opacity: 1;
-    pointer-events: auto;
-    
-    transform: translateX(-50%) translateY(0);
-} */
 
 .scroll-cue {
     font-family: "Space Grotesk", sans-serif;
@@ -1040,7 +1012,6 @@ body { overflow-wrap: anywhere; }
 
   .hero-nav {
     top: 50%;
-    /* top: calc(50% - 3.5rem); */
     width: min(92vw, 520px);
     gap: 0.9rem;
     justify-content: center;

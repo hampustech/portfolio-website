@@ -221,16 +221,12 @@ body {
 .pill-row {
   display: flex;
   justify-content: left;
-  gap: 1.5rem;
+  gap: 0.8rem;
 
   padding: 0.6rem 0;
   font-size: 0.9rem;
 
   margin-bottom: 0.6rem;
-}
-
-.pill-row span {
-    white-space: nowrap;
 }
 
 .subhead {

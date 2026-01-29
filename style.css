@@ -1,5 +1,3 @@
-/* ---------------------------FONTS--------------------------- */
-
 @font-face {
   font-family: "Space Grotesk";
   src: url("fonts/SpaceGrotesk-Regular.ttf") format("truetype");
@@ -48,7 +46,6 @@
   font-display: swap;
 }
 
-/* ---------------------------RESPONSIVE BAS--------------------------- */
 * { box-sizing: border-box; }
 
 html, body {
@@ -61,14 +58,11 @@ img { max-width: 100%; height: auto; display: block; }
 
 body { overflow-wrap: anywhere; }
 
-
-/* ---------------------------GLOBAL HELPERS--------------------------- */
 .no-scroll {
     overflow: hidden;
     height: 100vh;
 }
 
-/* --------------------------------HERO-------------------------------- */
 #hero {
     min-height: 100vh;
     padding: 2rem;
@@ -194,7 +188,6 @@ body { overflow-wrap: anywhere; }
     }
 }
 
-/* stäng av pulseringen vid första scroll */
 .scroll-cue.is-hidden {
     animation: none;
     opacity: 0;
@@ -243,7 +236,6 @@ body { overflow-wrap: anywhere; }
     fill: currentcolor;
 }
 
-/* --------------------------------ABOUT-------------------------------- */
 #about {
     position: relative;
     min-height: 100vh;
@@ -354,7 +346,6 @@ body { overflow-wrap: anywhere; }
     transition: opacity 2.2s ease, transform 2.2s ease;
 }
 
-/* --------------------------------SKILLZ-------------------------------- */
 #skills {
     position: relative;
     min-height: 100vh;
@@ -494,7 +485,6 @@ body { overflow-wrap: anywhere; }
     white-space: nowrap;
 }
 
-/* --------------------------------PORTFOLIO-------------------------------- */
 #portfolio {
     min-height: 100vh;
     position: relative;
@@ -604,7 +594,6 @@ body { overflow-wrap: anywhere; }
         0 1.2rem 3.2rem rgba(57, 70, 49, 0.14);
 }
 
-/* --------------------------------TESIMONIALS-------------------------------- */
 #testimonials {
     min-height: 100vh;
     position: relative;
@@ -761,7 +750,6 @@ body { overflow-wrap: anywhere; }
     transform: scale(1);
 }
 
-/* --------------------------------CONTACT-------------------------------- */
 #contact {
     min-height: 100vh;
     padding: 6rem 2rem 12rem 2rem;
@@ -935,7 +923,6 @@ body { overflow-wrap: anywhere; }
     background-color: rgba(57, 70, 49, 0.35);
 }
 
-/* --------------------------------FOOTER-------------------------------- */
 .footer {
     padding: 1rem 2rem 1rem 2rem; 
     background-color: #f1f0ea;
@@ -992,7 +979,6 @@ body { overflow-wrap: anywhere; }
     transform: scaleX(1);
 }
 
-/* ---------------------------MOBIL--------------------------- */
 @media (max-width: 900px) {
 
   #hero {

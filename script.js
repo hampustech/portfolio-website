@@ -34,8 +34,6 @@ handleScreenChange(mediaQuery);
 
 mediaQuery.addEventListener('change', handleScreenChange);
 
-// --------------------------------HERO--------------------------------
-
 let firstScrollHandled = false;
 let scrollDistance = 0;
 
@@ -43,7 +41,6 @@ const UNLOCK_THRESHOLD = 500;
 const UNLOCK_DELAY = 500;
 
 if (!mediaQuery.matches) {
-  /* lås scroll i början */
   document.body.classList.add('no-scroll');
 
   window.addEventListener('wheel', (event) => {
@@ -67,7 +64,7 @@ if (!mediaQuery.matches) {
       }
   }, { passive: false });
 }
-// --------------------------------ABOUT--------------------------------
+
 function isAboutInView() {
     const rect = aboutSection.getBoundingClientRect(); 
     return rect.top < window.innerHeight && rect.bottom > 0;
@@ -92,7 +89,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// --------------------------------SKILLZ--------------------------------
 let skillsAnimated = false;
 
 window.addEventListener('scroll', () => {
@@ -115,7 +111,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// --------------------------------TESTIMONIALS--------------------------------
 function setActiveTestimonial(activeIndex) {
 
     testimonials.forEach((testimonial, index) => {

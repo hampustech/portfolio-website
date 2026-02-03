@@ -54,13 +54,15 @@ if (!mediaQuery.matches) {
 
       scrollDistance += Math.abs(event.deltaY);
       const progress = Math.min(scrollDistance / UNLOCK_THRESHOLD, 1);
-      line.style.width = `${progress * 100}%`;
+      line.style.width = `${progress * 100}vw`;
 
       if (scrollDistance >= UNLOCK_THRESHOLD) {
           heroNav.classList.add('is-visible');
           socialLinks.classList.add('is-visible');
 
           scrollCue.classList.add('is-hidden');
+
+          line.style.width = "100vw";
 
           setTimeout(() => {
               document.body.classList.remove('no-scroll');

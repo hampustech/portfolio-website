@@ -138,18 +138,21 @@ body { overflow-wrap: anywhere; }
     opacity: 0.8;
 }
 
- .horizontal-line {
-    position: absolute; 
-    top: 50%;
-    left: 50%;
+.horizontal-line {
+  position: absolute;
+  top: calc(100% + 0.7rem);
+  left: 50%;
 
-    width: 0%;
-    height: 0.125rem; 
-    background-color: #394631;
+  width: 0vw;
+  height: 0.125rem;
+  background-color: #394631;
 
-    transform: translateX(-50%);
-    transition: width 1s ease-out;
+  transform: translateX(-50%);
+  transition: width 1s ease-out;
+  pointer-events: none;
 }
+
+
 
 .hero-nav {
   font-family: "Space Grotesk", sans-serif;
@@ -163,10 +166,9 @@ body { overflow-wrap: anywhere; }
   display: flex;
   gap: 2rem;
 
-  opacity: 0;
-  pointer-events: none;
+  opacity: 1;
 
-  transform: translateX(-50%) translateY(calc(-2rem + 0.5rem));
+  transform: translateX(-50%) translateY(calc(-2rem));
   transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
@@ -176,7 +178,18 @@ body { overflow-wrap: anywhere; }
     font-size: 1rem;
     color: #111;
 
-    transition: transform 0.25s ease;
+    opacity: 0;
+    pointer-events: none;
+
+    transform: translateY(0.4rem);
+    transition: transform 0.25s ease, transform 1.2s ease;
+}
+
+.hero-nav.is-visible a {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
 .hero-nav a:hover {
@@ -199,6 +212,7 @@ body { overflow-wrap: anywhere; }
 .hero-nav.is-visible {
   opacity: 1;
   pointer-events: auto;
+  transition: opacity 1.2s ease;
   transform: translateX(-50%) translateY(-2rem);
 }
 
@@ -217,6 +231,8 @@ body { overflow-wrap: anywhere; }
     transform: translateX(-50%) translateY(0);
 
     animation: pulse 1.6s ease-in-out infinite;
+
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 @keyframes pulse {
@@ -238,6 +254,7 @@ body { overflow-wrap: anywhere; }
     animation: none;
     opacity: 0;
     pointer-events: none;
+    transform: translateX(-50%) translateY(0.5rem);
 }
 
 .social-links {

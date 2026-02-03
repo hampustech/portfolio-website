@@ -128,6 +128,31 @@ body {
   white-space: nowrap;
 }
 
+.top-contact {
+  display: flex;
+  justify-content: left;
+  gap: 0.6rem;
+
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 0.1rem;
+}
+
+.top-contact a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.top-contact a:hover,
+.top-contact a:focus-visible {
+  text-decoration: underline;
+}
+
 .cv-header {
   position: relative;
   z-index: 1;

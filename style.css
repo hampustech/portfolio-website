@@ -164,7 +164,14 @@ body { overflow-wrap: anywhere; }
   left: 50%;
 
   display: flex;
-  gap: 3.5rem;
+
+  flex-wrap: nowrap;
+
+  justify-content: center;
+
+  width: min(96vw, 900px);
+
+  gap: clamp(0.6rem, 2.5vw, 3.5rem);
 
   opacity: 1;
 
@@ -175,14 +182,17 @@ body { overflow-wrap: anywhere; }
 .hero-nav a {
     position: relative;
     text-decoration: none;
-    font-size: 2rem;
     color: #111;
+
+    font-size: clamp(1rem, 3vw, 2rem);
+
+    white-space: nowrap;
 
     opacity: 0;
     pointer-events: none;
 
     transform: translateY(0.4rem);
-    transition: transform 0.25s ease;
+    transition: transform 0.25s ease, opacity 1.2s ease;
 }
 
 .hero-nav.is-visible a {

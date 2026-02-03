@@ -29,7 +29,7 @@ function handleScreenChange(e) {
 
 
     scrollCue.classList.add('is-hidden');
-    line.style.width = "100%";
+    line.style.width = "100vw";
 
     document.body.classList.remove('no-scroll');
   }

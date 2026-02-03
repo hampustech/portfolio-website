@@ -3,6 +3,7 @@ const langSwitch = document.querySelector('.lang-switch');
 
 const heroNav = document.querySelector('.hero-nav');
 const scrollCue = document.querySelector('.scroll-cue');
+
 const line = document.querySelector('.horizontal-line');
 const socialLinks = document.querySelector('.social-links');
 

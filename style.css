@@ -123,7 +123,7 @@ body { overflow-wrap: anywhere; }
 
 #hero h1 {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 700;
     margin: 0;
     opacity: 0.9;
@@ -132,7 +132,7 @@ body { overflow-wrap: anywhere; }
 
 #hero h2 {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     font-weight: 700;
     margin-top: 0.5rem;
     opacity: 0.8;
@@ -156,7 +156,7 @@ body { overflow-wrap: anywhere; }
 
 .hero-nav {
   font-family: "Space Grotesk", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.05rem;
 
   position: absolute;
@@ -164,7 +164,7 @@ body { overflow-wrap: anywhere; }
   left: 50%;
 
   display: flex;
-  gap: 2rem;
+  gap: 3.5rem;
 
   opacity: 1;
 
@@ -175,21 +175,20 @@ body { overflow-wrap: anywhere; }
 .hero-nav a {
     position: relative;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 2rem;
     color: #111;
 
     opacity: 0;
     pointer-events: none;
 
     transform: translateY(0.4rem);
-    transition: transform 0.25s ease, transform 1.2s ease;
+    transition: transform 0.25s ease;
 }
 
 .hero-nav.is-visible a {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
-    transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
 .hero-nav a:hover {
@@ -198,7 +197,7 @@ body { overflow-wrap: anywhere; }
 }
 
 .hero-nav:has(a:hover) a {
-    transition: transform 0.25s ease;
+    transition: transform 0.25s ease, opacity 1.2s ease;
 }
 
 .hero-nav a:hover ~ a {
@@ -223,7 +222,7 @@ body { overflow-wrap: anywhere; }
     top: calc(50% + 2.5rem);
     left: 50%;
 
-    font-size: 1rem;
+    font-size: 2rem;
     color: black;
 
     opacity: 0.8;

@@ -176,7 +176,50 @@ body { overflow-wrap: anywhere; }
   opacity: 1;
 
   transform: translateX(-50%) translateY(calc(-2rem));
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  
+    transition:
+    opacity 1.2s ease,
+    transform 0.35s ease,
+    top 0.35s ease,
+    background-color 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+
+    z-index: 50;
+}
+
+.hero-sticky-trigger {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+
+  width: 1px;
+  height: 1px;
+
+  pointer-events: none;
+  opacity: 0;
+}
+
+.hero-nav.is-sticky {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: min(96vw, 900px);
+  justify-content: center;
+
+  background: rgba(241, 240, 234, 0.70);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.08);
+  border-radius: 1.2rem;
+
+  padding: 0.8rem 1rem;
+
+  z-index: 1000;
 }
 
 .hero-nav a {

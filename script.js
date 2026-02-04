@@ -170,3 +170,44 @@ window.addEventListener('scroll', () => {
 });
 
 setTimeout(() => window.dispatchEvent(new Event('scroll')), 0);
+
+const heroSection = document.querySelector('#hero');
+const stickyTrigger = document.querySelector('.hero-sticky-trigger');
+
+if (heroNav && heroSection) {
+
+  heroNav.classList.remove('is-sticky');
+
+const STICKY_TOP_PX = 16;
+
+let stickyStartScrollY = 0;
+
+function calculateStickyStart() {
+  heroNav.classList.remove('is-sticky');
+
+  const navRect = heroNav.getBoundingClientRect();
+
+  stickyStartScrollY = window.scrollY + navRect.top - STICKY_TOP_PX;
+}
+
+function updateSticky() {
+  if (window.scrollY >= stickyStartScrollY) {
+    heroNav.classList.add('is-sticky');
+  } else {
+    heroNav.classList.remove('is-sticky');
+  }
+}
+
+window.addEventListener('load', () => {
+  calculateStickyStart();
+  updateSticky();
+});
+
+window.addEventListener('scroll', () => {
+  updateSticky();
+});
+
+window.addEventListener('resize', () => {
+  calculateStickyStart();
+  updateSticky();
+});}

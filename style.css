@@ -123,7 +123,7 @@ body { overflow-wrap: anywhere; }
 
 #hero h1 {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 700;
     margin: 0;
     opacity: 0.9;
@@ -132,28 +132,31 @@ body { overflow-wrap: anywhere; }
 
 #hero h2 {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     font-weight: 700;
     margin-top: 0.5rem;
     opacity: 0.8;
 }
 
- .horizontal-line {
-    position: absolute; 
-    top: 50%;
-    left: 50%;
+.hero-line {
+  position: absolute;
+  top: calc(50% + 1.2rem);
+  left: 50%;
 
-    width: 0%;
-    height: 0.125rem; 
-    background-color: #394631;
+  width: 0vw;
+  height: 0.125rem;
+  background-color: #394631;
 
-    transform: translateX(-50%);
-    transition: width 1s ease-out;
+  transform: translateX(-50%);
+  transition: width 1s ease-out;
+  pointer-events: none;
 }
+
+
 
 .hero-nav {
   font-family: "Space Grotesk", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.05rem;
 
   position: absolute;
@@ -161,22 +164,84 @@ body { overflow-wrap: anywhere; }
   left: 50%;
 
   display: flex;
-  gap: 2rem;
 
-  opacity: 0;
+  flex-wrap: nowrap;
+
+  justify-content: center;
+
+  width: min(96vw, 900px);
+
+  gap: clamp(3rem, 2.5vw, 3.5rem);
+
+  opacity: 1;
+
+  transform: translateX(-50%) translateY(calc(-2rem));
+  
+    transition:
+    opacity 1.2s ease,
+    transform 0.35s ease,
+    top 0.35s ease,
+    background-color 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+
+    z-index: 50;
+}
+
+.hero-sticky-trigger {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+
+  width: 1px;
+  height: 1px;
+
   pointer-events: none;
+  opacity: 0;
+}
 
-  transform: translateX(-50%) translateY(calc(-2rem + 0.5rem));
-  transition: opacity 1.2s ease, transform 1.2s ease;
+.hero-nav.is-sticky {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: min(96vw, 900px);
+  justify-content: center;
+
+  background: rgba(241, 240, 234, 0.70);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.08);
+  border-radius: 1.2rem;
+
+  padding: 0.8rem 1rem;
+
+  z-index: 1000;
 }
 
 .hero-nav a {
     position: relative;
     text-decoration: none;
-    font-size: 1rem;
     color: #111;
 
-    transition: transform 0.25s ease;
+    font-size: clamp(1rem, 3vw, 2rem);
+
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transform: translateY(0.4rem);
+    transition: transform 0.25s ease, opacity 1.2s ease;
+}
+
+.hero-nav.is-visible a {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
 }
 
 .hero-nav a:hover {
@@ -185,7 +250,7 @@ body { overflow-wrap: anywhere; }
 }
 
 .hero-nav:has(a:hover) a {
-    transition: transform 0.25s ease;
+    transition: transform 0.25s ease, opacity 1.2s ease;
 }
 
 .hero-nav a:hover ~ a {
@@ -199,6 +264,7 @@ body { overflow-wrap: anywhere; }
 .hero-nav.is-visible {
   opacity: 1;
   pointer-events: auto;
+  transition: opacity 1.2s ease;
   transform: translateX(-50%) translateY(-2rem);
 }
 
@@ -209,7 +275,7 @@ body { overflow-wrap: anywhere; }
     top: calc(50% + 2.5rem);
     left: 50%;
 
-    font-size: 1rem;
+    font-size: 2rem;
     color: black;
 
     opacity: 0.8;
@@ -217,6 +283,8 @@ body { overflow-wrap: anywhere; }
     transform: translateX(-50%) translateY(0);
 
     animation: pulse 1.6s ease-in-out infinite;
+
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 @keyframes pulse {
@@ -238,6 +306,7 @@ body { overflow-wrap: anywhere; }
     animation: none;
     opacity: 0;
     pointer-events: none;
+    transform: translateX(-50%) translateY(0.5rem);
 }
 
 .social-links {
@@ -273,8 +342,8 @@ body { overflow-wrap: anywhere; }
     align-items: center;
     justify-content: center;
 
-    width: 5rem;
-    height: 5rem;
+    width: 8rem;
+    height: 8rem;
 
     color: #111;
     opacity: 0.8;
@@ -342,7 +411,7 @@ body { overflow-wrap: anywhere; }
 
 .about-text h2 {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 2.8rem;
+    font-size: 3.2rem;
     font-weight: 600;
     line-height: 1.1;
     margin-bottom: 1rem;
@@ -350,7 +419,7 @@ body { overflow-wrap: anywhere; }
 
 .about-text p {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     opacity: 0.7;
 }
 
@@ -369,7 +438,7 @@ body { overflow-wrap: anywhere; }
 .background-text h3,
 .what-i-do h3 {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 0.8rem;
+    font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -380,7 +449,7 @@ body { overflow-wrap: anywhere; }
 .background-text p,
 .what-i-do p {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 1.7;
 }
 
@@ -659,7 +728,7 @@ body { overflow-wrap: anywhere; }
     margin-top: -6rem;
     background-color: #f1f0ea;
 
-    scroll-margin-top: 0rem;
+    scroll-margin-top: -4rem;
 }
 
 .testimonials-grid {
@@ -774,9 +843,9 @@ body { overflow-wrap: anywhere; }
 
 .testimonial-quote {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 1rem;
-    line-height: 1.7;
-    opacity: 0.7;
+    font-size: 1.08rem;
+    line-height: 1.8;
+    opacity: 0.78;
 
     margin-bottom: 0.4rem; 
 }
@@ -847,8 +916,8 @@ body { overflow-wrap: anywhere; }
 .cv-download {
     display: inline-block;
     font-family: "Space Grotesk", sans-serif;
-    font-size: 0.95rem;
-    font-weight: 500;
+    font-size: 2rem;
+    font-weight: 700;
 
     text-decoration: none;
     color: #111;
@@ -877,7 +946,6 @@ body { overflow-wrap: anywhere; }
 
 .social-cv::before {
     display: none;
-    /* top: -0.3rem; */
 }
 
 .cv-download::after {

@@ -3,7 +3,8 @@ const langSwitch = document.querySelector('.lang-switch');
 
 const heroNav = document.querySelector('.hero-nav');
 const scrollCue = document.querySelector('.scroll-cue');
-const line = document.querySelector('.horizontal-line');
+
+const line = document.querySelector('.hero-line');
 const socialLinks = document.querySelector('.social-links');
 
 const mediaQuery = window.matchMedia("(max-width: 900px)");
@@ -28,7 +29,7 @@ function handleScreenChange(e) {
 
 
     scrollCue.classList.add('is-hidden');
-    line.style.width = "100%";
+    line.style.width = "100vw";
 
     document.body.classList.remove('no-scroll');
   }
@@ -54,13 +55,15 @@ if (!mediaQuery.matches) {
 
       scrollDistance += Math.abs(event.deltaY);
       const progress = Math.min(scrollDistance / UNLOCK_THRESHOLD, 1);
-      line.style.width = `${progress * 100}%`;
+      line.style.width = `${progress * 100}vw`;
 
       if (scrollDistance >= UNLOCK_THRESHOLD) {
           heroNav.classList.add('is-visible');
           socialLinks.classList.add('is-visible');
 
           scrollCue.classList.add('is-hidden');
+
+          line.style.width = "100vw";
 
           setTimeout(() => {
               document.body.classList.remove('no-scroll');
@@ -167,3 +170,43 @@ window.addEventListener('scroll', () => {
 });
 
 setTimeout(() => window.dispatchEvent(new Event('scroll')), 0);
+
+const heroSection = document.querySelector('#hero');
+
+if (heroNav && heroSection) {
+
+  heroNav.classList.remove('is-sticky');
+
+const STICKY_TOP_PX = 16;
+
+let stickyStartScrollY = 0;
+
+function calculateStickyStart() {
+  heroNav.classList.remove('is-sticky');
+
+  const navRect = heroNav.getBoundingClientRect();
+
+  stickyStartScrollY = window.scrollY + navRect.top - STICKY_TOP_PX;
+}
+
+function updateSticky() {
+  if (window.scrollY >= stickyStartScrollY) {
+    heroNav.classList.add('is-sticky');
+  } else {
+    heroNav.classList.remove('is-sticky');
+  }
+}
+
+window.addEventListener('load', () => {
+  calculateStickyStart();
+  updateSticky();
+});
+
+window.addEventListener('scroll', () => {
+  updateSticky();
+});
+
+window.addEventListener('resize', () => {
+  calculateStickyStart();
+  updateSticky();
+});}

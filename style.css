@@ -377,13 +377,13 @@ body { overflow-wrap: anywhere; }
 
 .about-bg-text {
     position: absolute;
-    top: 17.3rem;
+    top: 19.5rem;
     left: 50%;
     
     transform: translate(-50%, -50%);
 
     font-family: Kode Mono;
-    font-size: clamp(9rem, 20vw, 24rem);
+    font-size: clamp(9rem, 20vw, 30rem);
     font-weight: 700;
     letter-spacing: 0.2em;
 
@@ -414,13 +414,14 @@ body { overflow-wrap: anywhere; }
     font-size: 3.2rem;
     font-weight: 600;
     line-height: 1.1;
-    margin-bottom: 1rem;
+    margin-bottom: 0.4rem;
 }
 
 .about-text p {
     font-family: "Space Grotesk", sans-serif;
     font-size: 1.2rem;
     opacity: 0.7;
+    margin-top: 0rem;
 }
 
 .about-portrait {
@@ -524,7 +525,7 @@ body { overflow-wrap: anywhere; }
 
 .skills-title {
     font-family: "Chakra Petch", sans-serif;
-    font-size: clamp(2.6rem, 4vw, 3.2rem);
+    font-size: clamp(2.6rem, 4vw, 4.5rem);
     letter-spacing: 0.25em;
     text-indent: 0.25rem;
     font-weight: 800;
@@ -569,7 +570,7 @@ body { overflow-wrap: anywhere; }
 .skills-column h3 {
     font-family: "Space Grotesk", sans-serif;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 2.25rem);
     letter-spacing: 0.18em;
     text-transform: uppercase;
 
@@ -605,7 +606,7 @@ body { overflow-wrap: anywhere; }
     font-family: "Space Grotesk", sans-serif;
     font-weight: 500;
     letter-spacing: 0.02em; 
-    font-size: 1.05rem;
+    font-size: 1.3rem;
     line-height: 1.8;
 
     text-align: left;
@@ -628,7 +629,7 @@ body { overflow-wrap: anywhere; }
 
 #portfolio h2 {
     font-family: "Chakra Petch", sans-serif;
-    font-size: clamp(2.6rem, 4vw, 3.2rem);
+    font-size: clamp(2.6rem, 4vw, 4.5rem);
     letter-spacing: 0.25em;
     text-indent: 0.25rem;
     font-weight: 800;
@@ -653,7 +654,7 @@ body { overflow-wrap: anywhere; }
     border-radius: 0.75rem;
 
     padding: 2rem;
-    min-height: 22rem;
+    min-height: 28rem;
 
     text-decoration: none;
     color: inherit;
@@ -672,22 +673,25 @@ body { overflow-wrap: anywhere; }
 .project-card h3 {
     font-family: "Chakra Petch", sans-serif;
     letter-spacing: 0.02em;
-    font-size: 1.25rem;
+    font-size: 2rem;
     font-weight: 600;
     margin-bottom: 0.75rem; 
+
+    opacity: 0.7;
 }
 
 .project-card p {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 0.95rem;
+    font-size: 1.3rem;
     line-height: 1.6;
-    opacity: 0.7;
+    opacity: 1;
 
     margin-bottom: auto;
 }
 
 .project-cta {
     margin-top: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 500;
     opacity: 0.85;
 
@@ -728,7 +732,7 @@ body { overflow-wrap: anywhere; }
     margin-top: -6rem;
     background-color: #f1f0ea;
 
-    scroll-margin-top: -4rem;
+    scroll-margin-top: -6rem;
 }
 
 .testimonials-grid {
@@ -740,15 +744,15 @@ body { overflow-wrap: anywhere; }
     background-image:
         repeating-linear-gradient(
             to right,
-            rgba(57, 70, 49, 0.03),
-            rgba(57, 70, 49, 0.03) 0.2rem, 
+            rgba(57, 70, 49, 0.06),
+            rgba(57, 70, 49, 0.06) 0.2rem, 
             transparent 0.0625rem, 
             transparent 10%
         ),
         repeating-linear-gradient(
             to bottom,
-            rgba(57, 70, 49, 0.03),
-            rgba(57, 70, 49, 0.03) 0.2rem,
+            rgba(57, 70, 49, 0.06),
+            rgba(57, 70, 49, 0.06) 0.2rem,
             transparent 0.0625rem,
             transparent 10%
         );
@@ -797,7 +801,7 @@ body { overflow-wrap: anywhere; }
 
 #testimonials h2 {
     font-family: "Chakra Petch", sans-serif;
-    font-size: clamp(2.2rem, 4vw, 2.8rem);
+    font-size: clamp(2.2rem, 4vw, 4.5rem);
     letter-spacing: 0.25em;
     text-indent: 0.25rem;
     font-weight: 800;
@@ -820,7 +824,7 @@ body { overflow-wrap: anywhere; }
     padding-left: 1.5rem;
 
     font-family: "Space Grotesk", sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
     opacity: 0.85;
 }
@@ -843,7 +847,7 @@ body { overflow-wrap: anywhere; }
 
 .testimonial-quote {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 1.08rem;
+    font-size: 1.3rem;
     line-height: 1.8;
     opacity: 0.78;
 
@@ -882,7 +886,7 @@ body { overflow-wrap: anywhere; }
     padding: 6rem 2rem 12rem 2rem;
     background-color: #f1f0ea;
 
-    scroll-margin-top: 4rem;
+    scroll-margin-top: 1rem;
 }
 
 .contact-inner {
@@ -892,8 +896,8 @@ body { overflow-wrap: anywhere; }
 
 #contact h2 {
     font-family: "Chakra Petch", sans-serif;
-    font-size: clamp(2.2rem, 4vw, 2.8rem);
-    letter-spacing: 0.25rem;
+    font-size: clamp(2.2rem, 4vw, 4.5rem);
+    letter-spacing: 0.25em;
     text-indent: 0.25rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -904,7 +908,7 @@ body { overflow-wrap: anywhere; }
 
 #contact p {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 1rem;
+    font-size: 1.4rem;
     line-height: 1.7;
     opacity: 0.7;
 
@@ -1003,18 +1007,22 @@ body { overflow-wrap: anywhere; }
 
 .form-group label {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 0.75rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+
     letter-spacing: 0.15em;
     text-transform: uppercase;
 
     margin-bottom: 0.5rem;
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 .form-group input,
 .form-group textarea {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
 
     padding: 0.75rem 0;
     background: transparent;
@@ -1041,7 +1049,7 @@ body { overflow-wrap: anywhere; }
 
   color: #111;
   font-family: "Space Grotesk", sans-serif;
-  font-size: 0.95rem;
+  font-size: 1.6rem;
   font-weight: 500;
 
   cursor: pointer;
@@ -1097,7 +1105,7 @@ body { overflow-wrap: anywhere; }
 
 .footer-copy {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 0.85rem;
+    font-size: 1rem;
     opacity: 0.5;
 }
 
@@ -1108,7 +1116,7 @@ body { overflow-wrap: anywhere; }
 
 .footer-nav a {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 0.85rem;
+    font-size: 1rem;
     text-decoration: none;
     color: #111;
     opacity: 0.6;
@@ -1135,7 +1143,7 @@ body { overflow-wrap: anywhere; }
     transform: scaleX(1);
 }
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
 
   #hero {
     padding: 1.25rem;
@@ -1429,4 +1437,4 @@ body { overflow-wrap: anywhere; }
      font-size: 1.2rem;
      letter-spacing: 0.12em;
     }
-}
+} */

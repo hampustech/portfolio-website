@@ -4,7 +4,7 @@ const langSwitch = document.querySelector('.lang-switch');
 const heroNav = document.querySelector('.hero-nav');
 const scrollCue = document.querySelector('.scroll-cue');
 
-const line = document.querySelector('.horizontal-line');
+const line = document.querySelector('.hero-line');
 const socialLinks = document.querySelector('.social-links');
 
 const mediaQuery = window.matchMedia("(max-width: 900px)");
@@ -172,7 +172,6 @@ window.addEventListener('scroll', () => {
 setTimeout(() => window.dispatchEvent(new Event('scroll')), 0);
 
 const heroSection = document.querySelector('#hero');
-const stickyTrigger = document.querySelector('.hero-sticky-trigger');
 
 if (heroNav && heroSection) {
 

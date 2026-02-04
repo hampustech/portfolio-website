@@ -138,9 +138,9 @@ body { overflow-wrap: anywhere; }
     opacity: 0.8;
 }
 
-.horizontal-line {
+.hero-line {
   position: absolute;
-  top: calc(100% + 0.7rem);
+  top: calc(50% + 1.2rem);
   left: 50%;
 
   width: 0vw;
@@ -171,7 +171,7 @@ body { overflow-wrap: anywhere; }
 
   width: min(96vw, 900px);
 
-  gap: clamp(0.6rem, 2.5vw, 3.5rem);
+  gap: clamp(3rem, 2.5vw, 3.5rem);
 
   opacity: 1;
 
@@ -342,8 +342,8 @@ body { overflow-wrap: anywhere; }
     align-items: center;
     justify-content: center;
 
-    width: 5rem;
-    height: 5rem;
+    width: 8rem;
+    height: 8rem;
 
     color: #111;
     opacity: 0.8;
@@ -411,7 +411,7 @@ body { overflow-wrap: anywhere; }
 
 .about-text h2 {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 2.8rem;
+    font-size: 3.2rem;
     font-weight: 600;
     line-height: 1.1;
     margin-bottom: 1rem;
@@ -419,7 +419,7 @@ body { overflow-wrap: anywhere; }
 
 .about-text p {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     opacity: 0.7;
 }
 
@@ -438,7 +438,7 @@ body { overflow-wrap: anywhere; }
 .background-text h3,
 .what-i-do h3 {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 0.8rem;
+    font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -449,7 +449,7 @@ body { overflow-wrap: anywhere; }
 .background-text p,
 .what-i-do p {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 1.7;
 }
 
@@ -728,7 +728,7 @@ body { overflow-wrap: anywhere; }
     margin-top: -6rem;
     background-color: #f1f0ea;
 
-    scroll-margin-top: 0rem;
+    scroll-margin-top: -4rem;
 }
 
 .testimonials-grid {
@@ -843,9 +843,9 @@ body { overflow-wrap: anywhere; }
 
 .testimonial-quote {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 1rem;
-    line-height: 1.7;
-    opacity: 0.7;
+    font-size: 1.08rem;
+    line-height: 1.8;
+    opacity: 0.78;
 
     margin-bottom: 0.4rem; 
 }
@@ -916,8 +916,8 @@ body { overflow-wrap: anywhere; }
 .cv-download {
     display: inline-block;
     font-family: "Space Grotesk", sans-serif;
-    font-size: 0.95rem;
-    font-weight: 500;
+    font-size: 2rem;
+    font-weight: 700;
 
     text-decoration: none;
     color: #111;
@@ -946,7 +946,6 @@ body { overflow-wrap: anywhere; }
 
 .social-cv::before {
     display: none;
-    /* top: -0.3rem; */
 }
 
 .cv-download::after {
